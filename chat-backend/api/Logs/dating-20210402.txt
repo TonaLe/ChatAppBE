@@ -1,0 +1,728 @@
+2021-04-02T19:29:48.0914590+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:29:48.5351160+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:29:48.5784460+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:29:48.5844260+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:29:48.5866150+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:29:48.6023990+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:29:48.6197200+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:29:48.8408760+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:29:48.8693530+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:29:49.0640700+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:29:49.0642080+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:29:49.0643830+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:29:49.0644330+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:29:49.0644560+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:30:17.4386310+07:00 0HM7LQC9BG92A:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-04-02T19:30:17.5161560+07:00 0HM7LQC9BG92A:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-02T19:30:17.5490430+07:00 0HM7LQC9BG92A:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-02T19:30:17.5900230+07:00 0HM7LQC9BG92A:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:30:17.7070940+07:00 0HM7LQC9BG92A:00000002 [INF] Executed DbCommand ("31"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-04-02T19:30:17.9468370+07:00 0HM7LQC9BG92A:00000002 [INF] Executed DbCommand ("17"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-02T19:30:18.0641700+07:00 0HM7LQC9BG92A:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-02T19:30:18.0858610+07:00 0HM7LQC9BG92A:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 531.4557ms (afa2e885)
+2021-04-02T19:30:18.0863680+07:00 0HM7LQC9BG92A:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-02T19:30:18.0943040+07:00 0HM7LQC9BG92A:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 658.1918ms (791a596a)
+2021-04-02T19:30:37.0835400+07:00 0HM7LQC9BG92C:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 (ca22a1cb)
+2021-04-02T19:30:37.1442250+07:00 0HM7LQC9BG92C:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:30:37.1461000+07:00 0HM7LQC9BG92C:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 - 404 0 - 62.5999ms (791a596a)
+2021-04-02T19:31:26.9016020+07:00 0HM7LQC9BG92C:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 (ca22a1cb)
+2021-04-02T19:31:26.9033450+07:00 0HM7LQC9BG92C:00000003 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:31:26.9036490+07:00 0HM7LQC9BG92C:00000003 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 - 404 0 - 2.0451ms (791a596a)
+2021-04-02T19:31:38.0018560+07:00 0HM7LQC9BG92A:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 (ca22a1cb)
+2021-04-02T19:31:38.0029280+07:00 0HM7LQC9BG92A:00000003 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-02T19:31:38.0034460+07:00 0HM7LQC9BG92A:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-02T19:31:38.0500020+07:00 0HM7LQC9BG92A:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:31:38.0566580+07:00 0HM7LQC9BG92A:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-04-02T19:31:38.0749100+07:00 0HM7LQC9BG92A:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-02T19:31:38.0832840+07:00 0HM7LQC9BG92A:00000003 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-02T19:31:38.0835470+07:00 0HM7LQC9BG92A:00000003 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 80.0224ms (afa2e885)
+2021-04-02T19:31:38.0835790+07:00 0HM7LQC9BG92A:00000003 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-02T19:31:38.0837410+07:00 0HM7LQC9BG92A:00000003 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 - 200 - application/json;+charset=utf-8 81.8817ms (791a596a)
+2021-04-02T19:31:57.0527720+07:00 0HM7LQC9BG92C:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 (ca22a1cb)
+2021-04-02T19:31:57.0609670+07:00 0HM7LQC9BG92C:00000004 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:31:57.0611950+07:00 0HM7LQC9BG92C:00000004 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 - 404 0 - 8.4358ms (791a596a)
+2021-04-02T19:32:51.3465810+07:00 0HM7LQC9BG92C:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 (ca22a1cb)
+2021-04-02T19:32:51.3469710+07:00 0HM7LQC9BG92C:00000005 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:32:51.3472220+07:00 0HM7LQC9BG92C:00000005 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 - 404 0 - 0.6657ms (791a596a)
+2021-04-02T19:33:18.2518310+07:00 0HM7LQC9BG92C:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/admin/photos-to-moderate application/json 71 (ca22a1cb)
+2021-04-02T19:33:18.2521150+07:00 0HM7LQC9BG92C:00000006 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:33:18.2523070+07:00 0HM7LQC9BG92C:00000006 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/admin/photos-to-moderate application/json 71 - 404 0 - 0.4641ms (791a596a)
+2021-04-02T19:33:26.6859280+07:00 0HM7LQC9BG92A:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/photos-to-moderate application/json 71 (ca22a1cb)
+2021-04-02T19:33:26.6863230+07:00 0HM7LQC9BG92A:00000004 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:33:26.6864780+07:00 0HM7LQC9BG92A:00000004 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/photos-to-moderate application/json 71 - 404 0 - 0.5589ms (791a596a)
+2021-04-02T19:33:47.1130110+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T19:33:55.0810820+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:33:55.4447690+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:33:55.4867550+07:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:33:55.4932530+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:33:55.4954970+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:33:55.5076590+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:33:55.5253910+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:33:55.7312610+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:33:55.7516540+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:33:55.8933810+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:33:55.8934540+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:33:55.8935760+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:33:55.8935980+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:33:55.8936150+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:34:25.8392300+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T19:34:30.7191540+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:34:31.1319970+07:00  [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:34:31.1788360+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:34:31.1854880+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:34:31.1876150+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:34:31.2019780+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:34:31.2245340+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:34:31.4379440+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:34:31.4585560+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:34:31.6141850+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:34:31.6142990+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:34:31.6144250+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:34:31.6144530+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:34:31.6144840+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:34:38.1251210+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T19:34:45.0046560+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:34:45.3875790+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:34:45.4316420+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:34:45.4383190+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:34:45.4406430+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:34:45.4536920+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:34:45.4709920+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:34:45.6709120+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:34:45.6914200+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:34:45.8419610+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:34:45.8420470+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:34:45.8421460+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:34:45.8421670+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:34:45.8421920+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:34:52.3760350+07:00 0HM7LQER9H09C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/photos-to-moderate application/json 71 (ca22a1cb)
+2021-04-02T19:34:52.5920280+07:00 0HM7LQER9H09C:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:34:52.6012690+07:00 0HM7LQER9H09C:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-02T19:34:52.6020490+07:00 0HM7LQER9H09C:00000002 [INF] Executing endpoint '"api.Controllers.AdminController.GetPhotosForModeration (api)"' (500cc934)
+2021-04-02T19:34:52.6157320+07:00 0HM7LQER9H09C:00000002 [INF] Route matched with "{action = \"GetPhotosForModeration\", controller = \"Admin\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult GetPhotosForModeration()" on controller "api.Controllers.AdminController" ("api"). (122b2fdf)
+2021-04-02T19:34:52.6247460+07:00 0HM7LQER9H09C:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.String"'. (605b4265)
+2021-04-02T19:34:52.6316770+07:00 0HM7LQER9H09C:00000002 [INF] Executed action "api.Controllers.AdminController.GetPhotosForModeration (api)" in 10.6515ms (afa2e885)
+2021-04-02T19:34:52.6318080+07:00 0HM7LQER9H09C:00000002 [INF] Executed endpoint '"api.Controllers.AdminController.GetPhotosForModeration (api)"' (99874f2b)
+2021-04-02T19:34:52.6331960+07:00 0HM7LQER9H09C:00000002 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/photos-to-moderate application/json 71 - 200 - text/plain;+charset=utf-8 260.7624ms (791a596a)
+2021-04-02T19:36:06.3209670+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T19:36:10.3280870+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:36:10.7624190+07:00  [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:36:10.8134870+07:00  [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:36:10.8231360+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:36:10.8274240+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:36:10.8453010+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:36:10.8701030+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:36:11.0937070+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:36:11.1148990+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:36:11.2667240+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:36:11.2668130+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:36:11.2669470+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:36:11.2669680+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:36:11.2669950+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:36:21.0293050+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T19:36:24.2685860+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:36:24.6923240+07:00  [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:36:24.7400230+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:36:24.7470200+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:36:24.7494740+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:36:24.7631630+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:36:24.7813240+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:36:25.0012370+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:36:25.0222390+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:36:25.1689380+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:36:25.1690590+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:36:25.1691730+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:36:25.1691970+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:36:25.1692380+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:40:55.3485240+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T19:40:58.6409770+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:40:59.0173460+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:40:59.0605040+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:40:59.0672560+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T19:40:59.0699160+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T19:40:59.0824330+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T19:40:59.0994310+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T19:40:59.3039000+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T19:40:59.3259730+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T19:40:59.4877600+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T19:40:59.4878760+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T19:40:59.4879960+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T19:40:59.4880230+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T19:40:59.4880590+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T19:41:15.1313070+07:00 0HM7LQIDBFKPQ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 (ca22a1cb)
+2021-04-02T19:41:15.3621780+07:00 0HM7LQIDBFKPQ:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-02T19:41:15.3668740+07:00 0HM7LQIDBFKPQ:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-02T19:41:15.3676880+07:00 0HM7LQIDBFKPQ:00000002 [INF] Executing endpoint '"api.Controllers.AdminController.GetUsersWithRoles (api)"' (500cc934)
+2021-04-02T19:41:15.3895370+07:00 0HM7LQIDBFKPQ:00000002 [INF] Route matched with "{action = \"GetUsersWithRoles\", controller = \"Admin\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsersWithRoles()" on controller "api.Controllers.AdminController" ("api"). (122b2fdf)
+2021-04-02T19:41:15.3935590+07:00 0HM7LQIDBFKPQ:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T19:41:15.5886970+07:00 0HM7LQIDBFKPQ:00000002 [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[UserName], [t].[Name], [t].[UserId], [t].[RoleId], [t].[Id]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN (
+    SELECT [a1].[Name], [a0].[UserId], [a0].[RoleId], [a1].[Id]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+ORDER BY [a].[UserName], [a].[Id], [t].[UserId], [t].[RoleId], [t].[Id]" (0723d8ff)
+2021-04-02T19:41:15.6050970+07:00 0HM7LQIDBFKPQ:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType0`3[[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-04-02T19:41:15.6461950+07:00 0HM7LQIDBFKPQ:00000002 [INF] Executed action "api.Controllers.AdminController.GetUsersWithRoles (api)" in 250.2556ms (afa2e885)
+2021-04-02T19:41:15.6469770+07:00 0HM7LQIDBFKPQ:00000002 [INF] Executed endpoint '"api.Controllers.AdminController.GetUsersWithRoles (api)"' (99874f2b)
+2021-04-02T19:41:15.6559800+07:00 0HM7LQIDBFKPQ:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/admin/users-with-roles application/json 71 - 200 - application/json;+charset=utf-8 527.5522ms (791a596a)
+2021-04-02T19:58:31.2871390+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T20:07:07.1381130+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:07:07.5428290+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:07:07.5903890+07:00  [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:07:07.5979650+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:07:07.6003480+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:07:07.6147080+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T20:07:07.6362500+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T20:07:07.8513560+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T20:07:07.8776460+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T20:07:08.0622430+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T20:07:08.0623530+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T20:07:08.0625130+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T20:07:08.0625400+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T20:07:08.0625680+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T20:09:12.3551140+07:00 0HM7LR216GD5G:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/admin/edit-roles/raymond?roles=Moderator,Member,Admin application/json 71 (ca22a1cb)
+2021-04-02T20:09:12.6272000+07:00 0HM7LR216GD5G:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-02T20:09:12.6367380+07:00 0HM7LR216GD5G:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-02T20:09:12.6381070+07:00 0HM7LR216GD5G:00000002 [INF] Executing endpoint '"api.Controllers.AdminController.EditRoles (api)"' (500cc934)
+2021-04-02T20:09:12.6799050+07:00 0HM7LR216GD5G:00000002 [INF] Route matched with "{action = \"EditRoles\", controller = \"Admin\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] EditRoles(System.String, System.String)" on controller "api.Controllers.AdminController" ("api"). (122b2fdf)
+2021-04-02T20:09:12.7071380+07:00 0HM7LR216GD5G:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:09:12.8254130+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("31"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-04-02T20:09:13.0275080+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-02T20:09:13.0457450+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-04-02T20:09:13.0778320+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-04-02T20:09:13.0857540+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-04-02T20:09:13.1328600+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-04-02T20:09:13.1404970+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-04-02T20:09:13.1436210+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-04-02T20:09:13.1512470+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-04-02T20:09:13.2606860+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-04-02T20:09:13.2668310+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-04-02T20:09:13.2858210+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-04-02T20:09:13.3099400+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-04-02T20:09:13.3157490+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-04-02T20:09:13.3225490+07:00 0HM7LR216GD5G:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-02T20:09:13.3302550+07:00 0HM7LR216GD5G:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2021-04-02T20:09:13.3569260+07:00 0HM7LR216GD5G:00000002 [INF] Executed action "api.Controllers.AdminController.EditRoles (api)" in 670.464ms (afa2e885)
+2021-04-02T20:09:13.3577720+07:00 0HM7LR216GD5G:00000002 [INF] Executed endpoint '"api.Controllers.AdminController.EditRoles (api)"' (99874f2b)
+2021-04-02T20:09:13.3634840+07:00 0HM7LR216GD5G:00000002 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/admin/edit-roles/raymond?roles=Moderator,Member,Admin application/json 71 - 200 - application/json;+charset=utf-8 1012.9036ms (791a596a)
+2021-04-02T20:23:24.9699980+07:00 0HM7LR216GD5I:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-04-02T20:23:24.9739730+07:00 0HM7LR216GD5I:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-02T20:23:24.9797390+07:00 0HM7LR216GD5I:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-02T20:23:25.0398800+07:00 0HM7LR216GD5I:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:23:25.1187580+07:00 0HM7LR216GD5I:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-04-02T20:23:25.1485550+07:00 0HM7LR216GD5I:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-02T20:23:25.1710900+07:00 0HM7LR216GD5I:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-02T20:23:25.1763420+07:00 0HM7LR216GD5I:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 196.428ms (afa2e885)
+2021-04-02T20:23:25.1764340+07:00 0HM7LR216GD5I:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-02T20:23:25.1771250+07:00 0HM7LR216GD5I:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 207.1843ms (791a596a)
+2021-04-02T20:23:53.7465940+07:00 0HM7LR216GD5K:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users/raymond - - (ca22a1cb)
+2021-04-02T20:23:53.7497760+07:00 0HM7LR216GD5K:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-02T20:23:53.7506230+07:00 0HM7LR216GD5K:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-02T20:23:53.7507220+07:00 0HM7LR216GD5K:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-04-02T20:23:53.7546360+07:00 0HM7LR216GD5K:00000002 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-02T20:23:53.9314080+07:00 0HM7LR216GD5K:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:23:54.0107240+07:00 0HM7LR216GD5K:00000002 [INF] Executed DbCommand ("12"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-02T20:23:54.0479690+07:00 0HM7LR216GD5K:00000002 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-04-02T20:23:54.0663940+07:00 0HM7LR216GD5K:00000002 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 311.6721ms (afa2e885)
+2021-04-02T20:23:54.0664980+07:00 0HM7LR216GD5K:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-04-02T20:23:54.0666720+07:00 0HM7LR216GD5K:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users/raymond - - - 200 - application/json;+charset=utf-8 320.0546ms (791a596a)
+2021-04-02T20:24:39.4288390+07:00 0HM7LR216GD5K:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/users/add-photo - 0 (ca22a1cb)
+2021-04-02T20:24:39.4298160+07:00 0HM7LR216GD5K:00000003 [INF] Successfully validated the token. (60169667)
+2021-04-02T20:24:39.4303320+07:00 0HM7LR216GD5K:00000003 [INF] Authorization was successful. (0d575a54)
+2021-04-02T20:24:39.4304390+07:00 0HM7LR216GD5K:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (500cc934)
+2021-04-02T20:24:39.4337560+07:00 0HM7LR216GD5K:00000003 [INF] Route matched with "{action = \"AddPhoto\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.PhotoDto]] AddPhoto(Microsoft.AspNetCore.Http.IFormFile)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-02T20:24:39.4387810+07:00 0HM7LR216GD5K:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:24:39.4428320+07:00 0HM7LR216GD5K:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-02T20:24:39.4480790+07:00 0HM7LR216GD5K:00000003 [INF] Executed action "api.Controllers.UsersController.AddPhoto (api)" in 14.241ms (afa2e885)
+2021-04-02T20:24:39.4489380+07:00 0HM7LR216GD5K:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (99874f2b)
+2021-04-02T20:24:39.4809880+07:00 0HM7LR216GD5K:00000003 [ERR] Object reference not set to an instance of an object. (f59a5554)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at api.Services.PhotoService.AddPhotoAsync(IFormFile file) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Services/PhotoService.cs:line 30
+   at api.Controllers.UsersController.AddPhoto(IFormFile file) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Controllers/UsersController.cs:line 82
+   at lambda_method376(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at api.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Middleware/ExceptionMiddleware.cs:line 29
+2021-04-02T20:24:39.4876170+07:00 0HM7LR216GD5K:00000003 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/users/add-photo - 0 - 500 - application/json 58.7886ms (791a596a)
+2021-04-02T20:25:04.2269770+07:00 0HM7LR216GD5I:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-04-02T20:25:04.2280990+07:00 0HM7LR216GD5I:00000003 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-02T20:25:04.2282650+07:00 0HM7LR216GD5I:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-02T20:25:04.2291410+07:00 0HM7LR216GD5I:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:25:04.2328150+07:00 0HM7LR216GD5I:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-04-02T20:25:04.2565210+07:00 0HM7LR216GD5I:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-02T20:25:04.2571400+07:00 0HM7LR216GD5I:00000003 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-02T20:25:04.2572710+07:00 0HM7LR216GD5I:00000003 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 28.9723ms (afa2e885)
+2021-04-02T20:25:04.2572980+07:00 0HM7LR216GD5I:00000003 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-02T20:25:04.2573950+07:00 0HM7LR216GD5I:00000003 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 30.4208ms (791a596a)
+2021-04-02T20:25:19.3815850+07:00 0HM7LR216GD5K:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/users/add-photo - 0 (ca22a1cb)
+2021-04-02T20:25:19.3819880+07:00 0HM7LR216GD5K:00000004 [INF] Successfully validated the token. (60169667)
+2021-04-02T20:25:19.3820950+07:00 0HM7LR216GD5K:00000004 [INF] Authorization was successful. (0d575a54)
+2021-04-02T20:25:19.3821240+07:00 0HM7LR216GD5K:00000004 [INF] Executing endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (500cc934)
+2021-04-02T20:25:19.3822330+07:00 0HM7LR216GD5K:00000004 [INF] Route matched with "{action = \"AddPhoto\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.PhotoDto]] AddPhoto(Microsoft.AspNetCore.Http.IFormFile)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-02T20:25:19.3848040+07:00 0HM7LR216GD5K:00000004 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:25:19.3895370+07:00 0HM7LR216GD5K:00000004 [INF] Executed DbCommand ("4"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-02T20:25:19.3907160+07:00 0HM7LR216GD5K:00000004 [INF] Executed action "api.Controllers.UsersController.AddPhoto (api)" in 8.1252ms (afa2e885)
+2021-04-02T20:25:19.3908890+07:00 0HM7LR216GD5K:00000004 [INF] Executed endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (99874f2b)
+2021-04-02T20:25:19.3920870+07:00 0HM7LR216GD5K:00000004 [ERR] Object reference not set to an instance of an object. (f59a5554)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at api.Services.PhotoService.AddPhotoAsync(IFormFile file) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Services/PhotoService.cs:line 30
+   at api.Controllers.UsersController.AddPhoto(IFormFile file) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Controllers/UsersController.cs:line 82
+   at lambda_method376(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at api.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Middleware/ExceptionMiddleware.cs:line 29
+2021-04-02T20:25:19.3949010+07:00 0HM7LR216GD5K:00000004 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/users/add-photo - 0 - 500 - application/json 13.3021ms (791a596a)
+2021-04-02T20:25:34.2378910+07:00 0HM7LR216GD5K:00000005 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/users/add-photo multipart/form-data;+boundary=--------------------------265669062040419050720792 258622 (ca22a1cb)
+2021-04-02T20:25:34.2384350+07:00 0HM7LR216GD5K:00000005 [INF] Successfully validated the token. (60169667)
+2021-04-02T20:25:34.2385740+07:00 0HM7LR216GD5K:00000005 [INF] Authorization was successful. (0d575a54)
+2021-04-02T20:25:34.2385970+07:00 0HM7LR216GD5K:00000005 [INF] Executing endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (500cc934)
+2021-04-02T20:25:34.2386870+07:00 0HM7LR216GD5K:00000005 [INF] Route matched with "{action = \"AddPhoto\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.PhotoDto]] AddPhoto(Microsoft.AspNetCore.Http.IFormFile)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-02T20:25:34.2718480+07:00 0HM7LR216GD5K:00000005 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:25:34.2751200+07:00 0HM7LR216GD5K:00000005 [INF] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-02T20:25:37.3193470+07:00 0HM7LR216GD5K:00000005 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-04-02T20:25:37.3550890+07:00 0HM7LR216GD5K:00000005 [INF] Executing "ObjectResult", writing value of type '"api.DTO.PhotoDto"'. (605b4265)
+2021-04-02T20:25:37.3555310+07:00 0HM7LR216GD5K:00000005 [INF] Executed action "api.Controllers.UsersController.AddPhoto (api)" in 3116.7951ms (afa2e885)
+2021-04-02T20:25:37.3555700+07:00 0HM7LR216GD5K:00000005 [INF] Executed endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (99874f2b)
+2021-04-02T20:25:37.3560190+07:00 0HM7LR216GD5K:00000005 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/users/add-photo multipart/form-data;+boundary=--------------------------265669062040419050720792 258622 - 200 - application/json;+charset=utf-8 3118.1683ms (791a596a)
+2021-04-02T20:27:23.7505830+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T20:27:28.9477200+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:27:29.3879070+07:00  [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:27:29.4424190+07:00  [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:27:29.4502970+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:27:29.4528790+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:27:29.4704260+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T20:27:29.4896310+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T20:27:29.7009640+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T20:27:29.7257630+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T20:27:29.8867240+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T20:27:29.8868810+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T20:27:29.8870500+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T20:27:29.8870780+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T20:27:29.8871080+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T20:28:21.8960050+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T20:28:25.5209160+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:28:25.9127440+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:28:25.9570340+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:28:25.9635440+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:28:25.9663100+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:28:25.9801150+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T20:28:26.0005790+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T20:28:26.2192610+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T20:28:26.2439480+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T20:28:26.4108800+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T20:28:26.4110080+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T20:28:26.4111580+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T20:28:26.4112020+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T20:28:26.4112320+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T20:30:07.6351200+07:00 0HM7LRDNA3EBC:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/users/add-photo multipart/form-data;+boundary=--------------------------274619666715330807880454 258622 (ca22a1cb)
+2021-04-02T20:30:07.8723250+07:00 0HM7LRDNA3EBC:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-02T20:30:07.8772920+07:00 0HM7LRDNA3EBC:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-02T20:30:07.8781030+07:00 0HM7LRDNA3EBC:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (500cc934)
+2021-04-02T20:30:07.9081270+07:00 0HM7LRDNA3EBC:00000002 [INF] Route matched with "{action = \"AddPhoto\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.PhotoDto]] AddPhoto(Microsoft.AspNetCore.Http.IFormFile)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-02T20:30:08.1206320+07:00 0HM7LRDNA3EBC:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:30:08.3364420+07:00 0HM7LRDNA3EBC:00000002 [INF] Executed DbCommand ("24"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-02T20:30:11.9358910+07:00 0HM7LRDNA3EBC:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-04-02T20:30:11.9964730+07:00 0HM7LRDNA3EBC:00000002 [INF] Executing "CreatedAtRouteResult", writing value of type '"api.DTO.PhotoDto"'. (605b4265)
+2021-04-02T20:30:12.0748350+07:00 0HM7LRDNA3EBC:00000002 [INF] Executed action "api.Controllers.UsersController.AddPhoto (api)" in 4161.0582ms (afa2e885)
+2021-04-02T20:30:12.0752820+07:00 0HM7LRDNA3EBC:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (99874f2b)
+2021-04-02T20:30:12.0812360+07:00 0HM7LRDNA3EBC:00000002 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/users/add-photo multipart/form-data;+boundary=--------------------------274619666715330807880454 258622 - 201 - application/json;+charset=utf-8 4448.2939ms (791a596a)
+2021-04-02T20:52:48.4671760+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T20:52:53.2928580+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T20:52:53.6924920+07:00  [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:52:53.7446090+07:00  [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:52:53.7509930+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T20:52:53.7532070+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T20:52:53.7669690+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T20:52:53.7864980+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T20:52:54.0130850+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T20:52:54.0329380+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T20:52:54.1773280+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T20:52:54.1774330+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T20:52:54.1776110+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T20:52:54.1776370+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T20:52:54.1776780+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T21:00:50.3061240+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T21:00:54.0704840+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T21:00:54.4474760+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T21:00:54.4926970+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T21:00:54.5007650+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T21:00:54.5034020+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T21:00:54.5167200+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T21:00:54.5367660+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T21:00:54.7507500+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T21:00:54.7719320+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T21:00:54.9224960+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T21:00:54.9225830+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T21:00:54.9227160+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T21:00:54.9227500+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T21:00:54.9227700+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T21:05:01.1855170+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T21:05:04.6924200+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T21:05:05.0865470+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T21:05:05.1330490+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T21:05:05.1399990+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T21:05:05.1423590+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T21:05:05.1558440+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T21:05:05.1745050+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T21:05:05.3932200+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T21:05:05.4149690+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T21:05:05.5814400+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T21:05:05.5815520+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T21:05:05.5816450+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T21:05:05.5816760+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T21:05:05.5816930+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-02T21:15:11.8446680+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-02T21:15:17.1856350+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-02T21:15:17.6018050+07:00  [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T21:15:17.6569310+07:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T21:15:17.6651050+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-02T21:15:17.6676480+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-02T21:15:17.6822690+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-02T21:15:17.7042750+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-02T21:15:17.9214380+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-02T21:15:17.9442380+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-02T21:15:18.1045270+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-02T21:15:18.1046400+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-02T21:15:18.1047400+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-02T21:15:18.1047860+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-02T21:15:18.1048340+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)

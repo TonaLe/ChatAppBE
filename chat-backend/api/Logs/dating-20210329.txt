@@ -1,0 +1,1249 @@
+2021-03-29T19:30:36.1059390+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:30:38.4077870+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:30:38.7586070+07:00  [INF] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:30:38.8732900+07:00  [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [datingApp2] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;" (0723d8ff)
+2021-03-29T19:30:38.9523210+07:00  [INF] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""DROP DATABASE [datingApp2];" (0723d8ff)
+2021-03-29T19:31:17.5412680+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:31:18.4918620+07:00  [INF] Executed DbCommand ("527"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""CREATE DATABASE [datingApp2];" (0723d8ff)
+2021-03-29T19:31:18.6763920+07:00  [INF] Executed DbCommand ("183"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [datingApp2] SET READ_COMMITTED_SNAPSHOT ON;
+END;" (0723d8ff)
+2021-03-29T19:31:18.7527280+07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:31:18.8458350+07:00  [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);" (0723d8ff)
+2021-03-29T19:31:18.8487570+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:31:18.8671350+07:00  [INF] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:31:18.8731120+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T19:31:18.8878910+07:00  [INF] Applying migration '"20210222134539_InitialCreate"'. (0e2ac64d)
+2021-03-29T19:31:18.9103080+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Username] nvarchar(max) NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2021-03-29T19:31:18.9129160+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210222134539_InitialCreate', N'5.0.3');" (0723d8ff)
+2021-03-29T19:31:18.9201620+07:00  [INF] Applying migration '"20210301134759_UserPasswordAdded"'. (0e2ac64d)
+2021-03-29T19:31:18.9271570+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [PasswordHash] varbinary(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9293420+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [PasswordSalt] varbinary(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9308980+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210301134759_UserPasswordAdded', N'5.0.3');" (0723d8ff)
+2021-03-29T19:31:18.9333430+07:00  [INF] Applying migration '"20210317141316_ExtendedUserEntity"'. (0e2ac64d)
+2021-03-29T19:31:18.9515660+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [City] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9536560+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [Country] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9561840+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [Created] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';" (0723d8ff)
+2021-03-29T19:31:18.9585230+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [DateOfBirth] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';" (0723d8ff)
+2021-03-29T19:31:18.9606010+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [Gender] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9626240+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [Interests] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9648500+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [Introduction] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9669950+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [KnownAs] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9698050+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [LastActive] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';" (0723d8ff)
+2021-03-29T19:31:18.9721380+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] ADD [LookingFor] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:18.9752490+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Photos] (
+    [Id] int NOT NULL IDENTITY,
+    [Url] nvarchar(max) NULL,
+    [IsMain] bit NOT NULL,
+    [PublicId] nvarchar(max) NULL,
+    [AppUsersId] int NOT NULL,
+    CONSTRAINT [PK_Photos] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Photos_Users_AppUsersId] FOREIGN KEY ([AppUsersId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2021-03-29T19:31:18.9773670+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Photos_AppUsersId] ON [Photos] ([AppUsersId]);" (0723d8ff)
+2021-03-29T19:31:18.9789830+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210317141316_ExtendedUserEntity', N'5.0.3');" (0723d8ff)
+2021-03-29T19:31:19.0102370+07:00  [INF] Applying migration '"20210326134439_AddIdentity"'. (0e2ac64d)
+2021-03-29T19:31:19.0527420+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Photos] DROP CONSTRAINT [FK_Photos_Users_AppUsersId];" (0723d8ff)
+2021-03-29T19:31:19.0556520+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Users] DROP CONSTRAINT [PK_Users];" (0723d8ff)
+2021-03-29T19:31:19.1076720+07:00  [INF] Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'PasswordSalt');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Users] DROP COLUMN [PasswordSalt];" (0723d8ff)
+2021-03-29T19:31:19.2797100+07:00  [INF] Executed DbCommand ("172"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_rename N'[Users]', N'AspNetUsers';" (0723d8ff)
+2021-03-29T19:31:19.2833820+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_rename N'[AspNetUsers].[Username]', N'UserName', N'COLUMN';" (0723d8ff)
+2021-03-29T19:31:19.2959390+07:00  [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[AspNetUsers]') AND [c].[name] = N'UserName');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [AspNetUsers] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [AspNetUsers] ALTER COLUMN [UserName] nvarchar(256) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3093080+07:00  [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""DECLARE @var2 sysname;
+SELECT @var2 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[AspNetUsers]') AND [c].[name] = N'PasswordHash');
+IF @var2 IS NOT NULL EXEC(N'ALTER TABLE [AspNetUsers] DROP CONSTRAINT [' + @var2 + '];');
+ALTER TABLE [AspNetUsers] ALTER COLUMN [PasswordHash] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3118020+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [AccessFailedCount] int NOT NULL DEFAULT 0;" (0723d8ff)
+2021-03-29T19:31:19.3137750+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [ConcurrencyStamp] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3159280+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [Email] nvarchar(256) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3184380+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [EmailConfirmed] bit NOT NULL DEFAULT CAST(0 AS bit);" (0723d8ff)
+2021-03-29T19:31:19.3206500+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [LockoutEnabled] bit NOT NULL DEFAULT CAST(0 AS bit);" (0723d8ff)
+2021-03-29T19:31:19.3227850+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [LockoutEnd] datetimeoffset NULL;" (0723d8ff)
+2021-03-29T19:31:19.3250190+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [NormalizedEmail] nvarchar(256) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3274490+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [NormalizedUserName] nvarchar(256) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3299280+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [PhoneNumber] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3326910+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [PhoneNumberConfirmed] bit NOT NULL DEFAULT CAST(0 AS bit);" (0723d8ff)
+2021-03-29T19:31:19.3352520+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [SecurityStamp] nvarchar(max) NULL;" (0723d8ff)
+2021-03-29T19:31:19.3383130+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD [TwoFactorEnabled] bit NOT NULL DEFAULT CAST(0 AS bit);" (0723d8ff)
+2021-03-29T19:31:19.3419580+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [AspNetUsers] ADD CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id]);" (0723d8ff)
+2021-03-29T19:31:19.3454190+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2021-03-29T19:31:19.3506370+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2021-03-29T19:31:19.3533690+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2021-03-29T19:31:19.3567220+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserTokens] (
+    [UserId] int NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2021-03-29T19:31:19.3596270+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2021-03-29T19:31:19.3626240+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserRoles] (
+    [UserId] int NOT NULL,
+    [RoleId] int NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2021-03-29T19:31:19.3647860+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);" (0723d8ff)
+2021-03-29T19:31:19.3671530+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;" (0723d8ff)
+2021-03-29T19:31:19.3692310+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);" (0723d8ff)
+2021-03-29T19:31:19.3713850+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;" (0723d8ff)
+2021-03-29T19:31:19.3734200+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);" (0723d8ff)
+2021-03-29T19:31:19.3754320+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);" (0723d8ff)
+2021-03-29T19:31:19.3776140+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);" (0723d8ff)
+2021-03-29T19:31:19.3799390+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Photos] ADD CONSTRAINT [FK_Photos_AspNetUsers_AppUsersId] FOREIGN KEY ([AppUsersId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;" (0723d8ff)
+2021-03-29T19:31:19.3813130+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210326134439_AddIdentity', N'5.0.3');" (0723d8ff)
+2021-03-29T19:31:27.8739370+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:31:28.2408120+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:31:28.2847900+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:31:28.2905660+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:31:28.2925280+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:31:28.3050440+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T19:31:28.3220570+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T19:31:28.5504750+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T19:31:28.6676630+07:00  [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2021-03-29T19:31:28.6770790+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2021-03-29T19:31:28.8278670+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 256), @p2='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoles]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:28.8745010+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2021-03-29T19:31:28.8768950+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2021-03-29T19:31:28.8832910+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 256), @p2='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoles]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:28.8889100+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2021-03-29T19:31:28.8908930+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2021-03-29T19:31:28.8942710+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 256), @p2='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetRoles]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:28.9318340+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.0417810+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.0527840+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.0680700+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.0908960+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.0955490+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.1150960+07:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.1315570+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.1386590+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.1589820+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.1643600+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.1665340+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.1712120+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.1743770+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.1762300+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.1787390+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.1822290+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.1842840+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.2008870+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.2049290+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.2066840+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.2110730+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.2137870+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.2156000+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.2177810+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.2213640+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.2235550+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.2404620+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.2447720+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.2468060+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.2517380+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.2543570+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.2561470+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.2586140+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.2620620+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.2640890+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.2803580+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.2846510+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.2864790+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.2910220+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.2936230+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.2954350+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.2978160+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.3015670+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.3039540+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.3209250+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.3253460+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.3271100+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.3318610+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.3345640+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.3366020+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.3388880+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.3425900+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.3448940+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.3620610+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.3758030+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.3792360+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.3856370+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.3886140+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.3907060+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.3932090+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.3984740+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.4007230+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.4190180+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.4241160+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.4263210+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.4316080+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.4344760+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.4370010+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.4403430+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.4448970+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.4468650+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.4654880+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.4713110+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.4740600+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.4844580+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.4881730+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.4909020+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.4934640+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.4982820+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.5007980+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.5199950+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.5254620+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.5275620+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?' (Size = 4000), @p27='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p24, @p25, @p26, @p27);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.5327380+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.5356940+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.5382000+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.5407690+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.5453130+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.5476330+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.5655540+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.5702210+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [City], [ConcurrencyStamp], [Country], [Created], [DateOfBirth], [Email], [EmailConfirmed], [Gender], [Interests], [Introduction], [KnownAs], [LastActive], [LockoutEnabled], [LockoutEnd], [LookingFor], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T19:31:29.5756870+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.5787910+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.5808020+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.5837110+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.5880800+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.5906530+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.5953520+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.5984830+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)" (0723d8ff)
+2021-03-29T19:31:29.6006540+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0" (0723d8ff)
+2021-03-29T19:31:29.6032010+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2021-03-29T19:31:29.6073890+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);" (0723d8ff)
+2021-03-29T19:31:29.6093740+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-03-29T19:31:29.6346120+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T19:31:29.8076750+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T19:31:29.8077680+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T19:31:29.8078680+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T19:31:29.8078890+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T19:31:29.8079100+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T19:45:11.7803430+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T19:51:50.3862910+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:51:50.7622110+07:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:51:50.8184050+07:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:51:50.8262630+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:51:50.8293740+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:51:50.8455530+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T19:51:50.8652270+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T19:51:51.0993920+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T19:51:51.1233470+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T19:51:51.3008590+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T19:51:51.3009280+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T19:51:51.3010840+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T19:51:51.3011890+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T19:51:51.3012420+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T19:52:22.9191500+07:00 0HM7IM5VHTKOG:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-03-29T19:52:22.9842940+07:00 0HM7IM5VHTKOG:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T19:52:23.0122950+07:00 0HM7IM5VHTKOG:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T19:52:23.0495020+07:00 0HM7IM5VHTKOG:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:52:23.1549400+07:00 0HM7IM5VHTKOG:00000002 [INF] Executed DbCommand ("29"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T19:52:23.3729040+07:00 0HM7IM5VHTKOG:00000002 [INF] Executed DbCommand ("11"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T19:52:23.4840600+07:00 0HM7IM5VHTKOG:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T19:52:23.5062170+07:00 0HM7IM5VHTKOG:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 488.1088ms (afa2e885)
+2021-03-29T19:52:23.5069290+07:00 0HM7IM5VHTKOG:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T19:52:23.5133910+07:00 0HM7IM5VHTKOG:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 596.8144ms (791a596a)
+2021-03-29T19:52:33.8560560+07:00 0HM7IM5VHTKOG:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 (ca22a1cb)
+2021-03-29T19:52:33.8596410+07:00 0HM7IM5VHTKOG:00000003 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T19:52:33.8600090+07:00 0HM7IM5VHTKOG:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T19:52:33.9142290+07:00 0HM7IM5VHTKOG:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:52:33.9208270+07:00 0HM7IM5VHTKOG:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T19:52:33.9394640+07:00 0HM7IM5VHTKOG:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T19:52:33.9463460+07:00 0HM7IM5VHTKOG:00000003 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T19:52:33.9466750+07:00 0HM7IM5VHTKOG:00000003 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 86.6017ms (afa2e885)
+2021-03-29T19:52:33.9467320+07:00 0HM7IM5VHTKOG:00000003 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T19:52:33.9470050+07:00 0HM7IM5VHTKOG:00000003 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 - 200 - application/json;+charset=utf-8 91.0462ms (791a596a)
+2021-03-29T19:55:53.2253600+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T19:55:56.7405110+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:55:57.1324140+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:55:57.1794610+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:55:57.1865790+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:55:57.1885760+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:55:57.2007980+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T19:55:57.2183330+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T19:55:57.4249000+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T19:55:57.4485560+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T19:55:57.6110980+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T19:55:57.6111910+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T19:55:57.6113800+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T19:55:57.6114250+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T19:55:57.6114540+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T19:56:21.6289090+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T19:56:24.9687930+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:56:25.3550760+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:56:25.3975830+07:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:56:25.4042630+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T19:56:25.4067190+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T19:56:25.4188760+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T19:56:25.4365340+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T19:56:25.6472260+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T19:56:25.6706290+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T19:56:25.8171610+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T19:56:25.8172620+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T19:56:25.8173840+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T19:56:25.8174090+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T19:56:25.8174350+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T19:56:30.0709710+07:00 0HM7IM896Q39Q:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 (ca22a1cb)
+2021-03-29T19:56:30.1470000+07:00 0HM7IM896Q39Q:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T19:56:30.1795250+07:00 0HM7IM896Q39Q:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T19:56:30.2203530+07:00 0HM7IM896Q39Q:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:56:30.3400960+07:00 0HM7IM896Q39Q:00000002 [INF] Executed DbCommand ("24"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T19:56:30.5878200+07:00 0HM7IM896Q39Q:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T19:56:30.7230890+07:00 0HM7IM896Q39Q:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T19:56:30.7469790+07:00 0HM7IM896Q39Q:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 560.961ms (afa2e885)
+2021-03-29T19:56:30.7475790+07:00 0HM7IM896Q39Q:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T19:56:30.7538370+07:00 0HM7IM896Q39Q:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 - 200 - application/json;+charset=utf-8 687.9124ms (791a596a)
+2021-03-29T19:56:59.5838720+07:00 0HM7IM896Q39S:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users - - (ca22a1cb)
+2021-03-29T19:56:59.6583650+07:00 0HM7IM896Q39S:00000002 [INF] Successfully validated the token. (60169667)
+2021-03-29T19:56:59.6638010+07:00 0HM7IM896Q39S:00000002 [INF] Authorization was successful. (0d575a54)
+2021-03-29T19:56:59.6642940+07:00 0HM7IM896Q39S:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.GetUsers (api)"' (500cc934)
+2021-03-29T19:56:59.6692010+07:00 0HM7IM896Q39S:00000002 [INF] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.MemberDto]]] GetUsers()" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-03-29T19:56:59.8718510+07:00 0HM7IM896Q39S:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:56:59.9433660+07:00 0HM7IM896Q39S:00000002 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [Photos] AS [p] ON [a].[Id] = [p].[AppUsersId]
+ORDER BY [a].[Id], [p].[Id]" (0723d8ff)
+2021-03-29T19:56:59.9975620+07:00 0HM7IM896Q39S:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[api.DTO.MemberDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-03-29T19:57:00.0202510+07:00 0HM7IM896Q39S:00000002 [INF] Executed action "api.Controllers.UsersController.GetUsers (api)" in 350.9696ms (afa2e885)
+2021-03-29T19:57:00.0203120+07:00 0HM7IM896Q39S:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.GetUsers (api)"' (99874f2b)
+2021-03-29T19:57:00.0210170+07:00 0HM7IM896Q39S:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users - - - 200 - application/json;+charset=utf-8 437.1610ms (791a596a)
+2021-03-29T19:57:09.5317280+07:00 0HM7IM896Q39Q:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-03-29T19:57:09.5361030+07:00 0HM7IM896Q39Q:00000003 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T19:57:09.5362590+07:00 0HM7IM896Q39Q:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T19:57:09.5423780+07:00 0HM7IM896Q39Q:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:57:09.5483500+07:00 0HM7IM896Q39Q:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T19:57:09.5700150+07:00 0HM7IM896Q39Q:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T19:57:09.5705840+07:00 0HM7IM896Q39Q:00000003 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T19:57:09.5707570+07:00 0HM7IM896Q39Q:00000003 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 34.4616ms (afa2e885)
+2021-03-29T19:57:09.5707910+07:00 0HM7IM896Q39Q:00000003 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T19:57:09.5709660+07:00 0HM7IM896Q39Q:00000003 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 39.3342ms (791a596a)
+2021-03-29T19:57:23.7334910+07:00 0HM7IM896Q39S:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users - - (ca22a1cb)
+2021-03-29T19:57:23.7338660+07:00 0HM7IM896Q39S:00000003 [INF] Successfully validated the token. (60169667)
+2021-03-29T19:57:23.7347290+07:00 0HM7IM896Q39S:00000003 [INF] Authorization failed. "These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)" (d3883ae7)
+2021-03-29T19:57:23.7365930+07:00 0HM7IM896Q39S:00000003 [INF] AuthenticationScheme: "Bearer" was forbidden. (212684b8)
+2021-03-29T19:57:23.7368510+07:00 0HM7IM896Q39S:00000003 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users - - - 403 0 - 3.3407ms (791a596a)
+2021-03-29T19:58:16.7239970+07:00 0HM7IM896Q39Q:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-03-29T19:58:16.7241690+07:00 0HM7IM896Q39Q:00000004 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T19:58:16.7242520+07:00 0HM7IM896Q39Q:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T19:58:16.7297570+07:00 0HM7IM896Q39Q:00000004 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:58:16.7330590+07:00 0HM7IM896Q39Q:00000004 [INF] Executed DbCommand ("3"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T19:58:16.7505760+07:00 0HM7IM896Q39Q:00000004 [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T19:58:16.7509850+07:00 0HM7IM896Q39Q:00000004 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T19:58:16.7511450+07:00 0HM7IM896Q39Q:00000004 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 26.8673ms (afa2e885)
+2021-03-29T19:58:16.7513080+07:00 0HM7IM896Q39Q:00000004 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T19:58:16.7514610+07:00 0HM7IM896Q39Q:00000004 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 27.4484ms (791a596a)
+2021-03-29T19:58:31.3639080+07:00 0HM7IM896Q39S:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users - - (ca22a1cb)
+2021-03-29T19:58:31.3642280+07:00 0HM7IM896Q39S:00000004 [INF] Successfully validated the token. (60169667)
+2021-03-29T19:58:31.3653800+07:00 0HM7IM896Q39S:00000004 [INF] Authorization failed. "These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)" (d3883ae7)
+2021-03-29T19:58:31.3658790+07:00 0HM7IM896Q39S:00000004 [INF] AuthenticationScheme: "Bearer" was forbidden. (212684b8)
+2021-03-29T19:58:31.3660840+07:00 0HM7IM896Q39S:00000004 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users - - - 403 0 - 2.1462ms (791a596a)
+2021-03-29T19:58:52.6058450+07:00 0HM7IM896Q39Q:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 (ca22a1cb)
+2021-03-29T19:58:52.6059890+07:00 0HM7IM896Q39Q:00000005 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T19:58:52.6060830+07:00 0HM7IM896Q39Q:00000005 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T19:58:52.6068440+07:00 0HM7IM896Q39Q:00000005 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:58:52.6101180+07:00 0HM7IM896Q39Q:00000005 [INF] Executed DbCommand ("2"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T19:58:52.6297180+07:00 0HM7IM896Q39Q:00000005 [INF] Executed DbCommand ("5"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T19:58:52.6304960+07:00 0HM7IM896Q39Q:00000005 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T19:58:52.6306730+07:00 0HM7IM896Q39Q:00000005 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 24.5464ms (afa2e885)
+2021-03-29T19:58:52.6307860+07:00 0HM7IM896Q39Q:00000005 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T19:58:52.6309710+07:00 0HM7IM896Q39Q:00000005 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 55 - 200 - application/json;+charset=utf-8 25.0883ms (791a596a)
+2021-03-29T19:59:05.0962870+07:00 0HM7IM896Q39S:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users - - (ca22a1cb)
+2021-03-29T19:59:05.0969870+07:00 0HM7IM896Q39S:00000005 [INF] Successfully validated the token. (60169667)
+2021-03-29T19:59:05.0972430+07:00 0HM7IM896Q39S:00000005 [INF] Authorization was successful. (0d575a54)
+2021-03-29T19:59:05.0973240+07:00 0HM7IM896Q39S:00000005 [INF] Executing endpoint '"api.Controllers.UsersController.GetUsers (api)"' (500cc934)
+2021-03-29T19:59:05.0974890+07:00 0HM7IM896Q39S:00000005 [INF] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.MemberDto]]] GetUsers()" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-03-29T19:59:05.0983650+07:00 0HM7IM896Q39S:00000005 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T19:59:05.1020390+07:00 0HM7IM896Q39S:00000005 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [Photos] AS [p] ON [a].[Id] = [p].[AppUsersId]
+ORDER BY [a].[Id], [p].[Id]" (0723d8ff)
+2021-03-29T19:59:05.1054650+07:00 0HM7IM896Q39S:00000005 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[api.DTO.MemberDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-03-29T19:59:05.1058350+07:00 0HM7IM896Q39S:00000005 [INF] Executed action "api.Controllers.UsersController.GetUsers (api)" in 8.3069ms (afa2e885)
+2021-03-29T19:59:05.1058670+07:00 0HM7IM896Q39S:00000005 [INF] Executed endpoint '"api.Controllers.UsersController.GetUsers (api)"' (99874f2b)
+2021-03-29T19:59:05.1059870+07:00 0HM7IM896Q39S:00000005 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users - - - 200 - application/json;+charset=utf-8 9.6937ms (791a596a)
+2021-03-29T20:06:52.7021080+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T20:06:57.6802370+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T20:06:58.0541840+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:06:58.1007060+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:06:58.1072050+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:06:58.1090970+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:06:58.1215930+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T20:06:58.1405370+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T20:06:58.3583060+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T20:06:58.3775940+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T20:06:58.5217390+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T20:06:58.5218540+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T20:06:58.5220000+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T20:06:58.5220350+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T20:06:58.5220750+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T20:10:58.3676870+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T20:11:02.3641040+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T20:11:02.8593650+07:00  [INF] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:11:02.9128730+07:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:11:02.9204960+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:11:02.9249400+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:11:02.9456350+07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T20:11:02.9666540+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T20:11:03.1973510+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T20:11:03.2205870+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T20:11:03.3838990+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T20:11:03.3840480+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T20:11:03.3842100+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T20:11:03.3842430+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T20:11:03.3842710+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T20:18:24.6188640+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T20:18:31.2485800+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T20:18:31.6455050+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:18:31.6853810+07:00  [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:18:31.6915380+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:18:31.6936930+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:18:31.7059960+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T20:18:31.7254350+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T20:18:31.9349370+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T20:18:31.9554640+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T20:18:32.1123060+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T20:18:32.1124580+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T20:18:32.1126890+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T20:18:32.1127620+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T20:18:32.1128070+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T20:34:43.8873690+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T20:34:49.1597700+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T20:34:49.5848230+07:00  [INF] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:34:49.6321480+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:34:49.6590180+07:00  [INF] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:34:49.6615950+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:34:49.6749170+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T20:34:49.6947570+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T20:34:49.9178270+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T20:34:49.9439460+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T20:34:50.1175030+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T20:34:50.1176080+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T20:34:50.1177090+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T20:34:50.1177340+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T20:34:50.1177710+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T20:56:03.2716730+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T20:56:08.3072550+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T20:56:08.6969790+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:56:08.7443720+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:56:08.7516610+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:56:08.7544670+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:56:08.7670250+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T20:56:08.7843290+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T20:56:08.9987380+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T20:56:09.0244600+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T20:56:09.1838150+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T20:56:09.1839140+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T20:56:09.1840570+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T20:56:09.1840910+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T20:56:09.1841100+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T20:57:19.8057970+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T20:57:23.3456380+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T20:57:23.7336540+07:00  [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:57:23.7739650+07:00  [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:57:23.7806390+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T20:57:23.7830430+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T20:57:23.7957840+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T20:57:23.8135060+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T20:57:24.0284310+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T20:57:24.0509080+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T20:57:24.1978200+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T20:57:24.1979770+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T20:57:24.1981540+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T20:57:24.1981920+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T20:57:24.1982230+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T21:04:24.3054930+07:00  [INF] Application is shutting down... (90f52c38)
+2021-03-29T21:04:27.7709510+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T21:04:28.1787750+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T21:04:28.2222770+07:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T21:04:28.2288490+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-03-29T21:04:28.2311570+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-03-29T21:04:28.2438940+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-03-29T21:04:28.2613330+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-03-29T21:04:28.4850420+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-03-29T21:04:28.5072000+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-03-29T21:04:28.6598000+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-03-29T21:04:28.6599080+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-03-29T21:04:28.6600470+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-03-29T21:04:28.6600730+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-03-29T21:04:28.6601160+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-03-29T21:05:49.7449660+07:00 0HM7INF0SK7AG:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-03-29T21:05:49.8276370+07:00 0HM7INF0SK7AG:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-03-29T21:05:49.8616390+07:00 0HM7INF0SK7AG:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-03-29T21:05:49.9016680+07:00 0HM7INF0SK7AG:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T21:05:50.0212430+07:00 0HM7INF0SK7AG:00000002 [INF] Executed DbCommand ("27"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__loginDto_Username_0" (0723d8ff)
+2021-03-29T21:05:50.2640720+07:00 0HM7INF0SK7AG:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-03-29T21:05:50.4009360+07:00 0HM7INF0SK7AG:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-03-29T21:05:50.4237010+07:00 0HM7INF0SK7AG:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 555.0114ms (afa2e885)
+2021-03-29T21:05:50.4242470+07:00 0HM7INF0SK7AG:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-03-29T21:05:50.4305720+07:00 0HM7INF0SK7AG:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 688.1201ms (791a596a)
+2021-03-29T21:07:06.6664350+07:00 0HM7INF0SK7AI:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/users/add-photo multipart/form-data;+boundary=--------------------------749988795717034859753083 501733 (ca22a1cb)
+2021-03-29T21:07:06.7378860+07:00 0HM7INF0SK7AI:00000002 [INF] Successfully validated the token. (60169667)
+2021-03-29T21:07:06.7424420+07:00 0HM7INF0SK7AI:00000002 [INF] Authorization was successful. (0d575a54)
+2021-03-29T21:07:06.7429720+07:00 0HM7INF0SK7AI:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (500cc934)
+2021-03-29T21:07:06.7528910+07:00 0HM7INF0SK7AI:00000002 [INF] Route matched with "{action = \"AddPhoto\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.PhotoDto]] AddPhoto(Microsoft.AspNetCore.Http.IFormFile)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-03-29T21:07:06.9944780+07:00 0HM7INF0SK7AI:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-03-29T21:07:07.0903050+07:00 0HM7INF0SK7AI:00000002 [INF] Executed DbCommand ("25"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-03-29T21:07:11.8615060+07:00 0HM7INF0SK7AI:00000002 [INF] Executed DbCommand ("15"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Photos] ([AppUsersId], [IsMain], [PublicId], [Url])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Photos]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2021-03-29T21:07:11.9180220+07:00 0HM7INF0SK7AI:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.PhotoDto"'. (605b4265)
+2021-03-29T21:07:11.9225980+07:00 0HM7INF0SK7AI:00000002 [INF] Executed action "api.Controllers.UsersController.AddPhoto (api)" in 5169.6142ms (afa2e885)
+2021-03-29T21:07:11.9226880+07:00 0HM7INF0SK7AI:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.AddPhoto (api)"' (99874f2b)
+2021-03-29T21:07:11.9243200+07:00 0HM7INF0SK7AI:00000002 [INF] Request finished HTTP/1.1 POST https://localhost:5001/api/users/add-photo multipart/form-data;+boundary=--------------------------749988795717034859753083 501733 - 200 - application/json;+charset=utf-8 5258.0794ms (791a596a)

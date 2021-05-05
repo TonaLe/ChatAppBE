@@ -1,0 +1,856 @@
+2021-04-07T19:13:51.1207250+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:13:51.5695840+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:13:51.6147810+07:00  [INF] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:13:51.6211520+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:13:51.6232770+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:13:51.6393110+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T19:13:51.6577930+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-07T19:13:51.8845170+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-07T19:13:51.9127780+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T19:13:52.0880950+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T19:13:52.0881790+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T19:13:52.0882990+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T19:13:52.0883200+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T19:13:52.0883460+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T19:13:53.4795640+07:00 0HM7PNQE4R7BS:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-04-07T19:13:53.5492930+07:00 0HM7PNQE4R7BS:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-07T19:13:53.5758530+07:00 0HM7PNQE4R7BS:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-07T19:13:53.7852780+07:00 0HM7PNQE4R7BS:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:13:53.9887930+07:00 0HM7PNQE4R7BS:00000002 [INF] Executed DbCommand ("27"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__loginDto_Username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-07T19:13:54.1884930+07:00 0HM7PNQE4R7BS:00000002 [INF] Executed DbCommand ("9"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-07T19:13:54.3185830+07:00 0HM7PNQE4R7BS:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-07T19:13:54.3417230+07:00 0HM7PNQE4R7BS:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 759.9579ms (afa2e885)
+2021-04-07T19:13:54.3422970+07:00 0HM7PNQE4R7BS:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-07T19:13:54.3497020+07:00 0HM7PNQE4R7BS:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 872.0292ms (791a596a)
+2021-04-07T19:14:19.0718350+07:00 0HM7PNQE4R7BU:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users?minAge=21&maxAge=23 - - (ca22a1cb)
+2021-04-07T19:14:19.1484230+07:00 0HM7PNQE4R7BU:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-07T19:14:19.1546470+07:00 0HM7PNQE4R7BU:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-07T19:14:19.1553160+07:00 0HM7PNQE4R7BU:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.GetUsers (api)"' (500cc934)
+2021-04-07T19:14:19.1634290+07:00 0HM7PNQE4R7BU:00000002 [INF] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.MemberDto]]] GetUsers(api.Helpers.UserParams)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-07T19:14:19.2180150+07:00 0HM7PNQE4R7BU:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:14:19.2372100+07:00 0HM7PNQE4R7BU:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-07T19:14:19.2850800+07:00 0HM7PNQE4R7BU:00000002 [INF] Executed DbCommand ("11"ms) [Parameters=["@__userParams_CurrentUsername_0='?' (Size = 256), @__userParams_Gender_1='?' (Size = 4000), @__minDob_2='?' (DbType = DateTime2), @__maxDob_3='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE (((([a].[UserName] <> @__userParams_CurrentUsername_0) OR [a].[UserName] IS NULL) AND ([a].[Gender] = @__userParams_Gender_1)) AND ([a].[DateOfBirth] >= @__minDob_2)) AND ([a].[DateOfBirth] <= @__maxDob_3)" (0723d8ff)
+2021-04-07T19:14:19.3298960+07:00 0HM7PNQE4R7BU:00000002 [INF] Executed DbCommand ("12"ms) [Parameters=["@__userParams_CurrentUsername_0='?' (Size = 256), @__userParams_Gender_1='?' (Size = 4000), @__minDob_2='?' (DbType = DateTime2), @__maxDob_3='?' (DbType = DateTime2), @__p_4='?' (DbType = Int32), @__p_5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[UserName], [t].[c], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [p0].[Id], [p0].[AppUsersId], [p0].[IsMain], [p0].[PublicId], [p0].[Url], [p1].[Id], [p1].[Url], [p1].[IsMain]
+FROM (
+    SELECT [a].[Id], [a].[UserName], (
+        SELECT TOP(1) [p].[Url]
+        FROM [Photos] AS [p]
+        WHERE ([a].[Id] = [p].[AppUsersId]) AND ([p].[IsMain] = CAST(1 AS bit))) AS [c], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled]
+    FROM [AspNetUsers] AS [a]
+    WHERE (((([a].[UserName] <> @__userParams_CurrentUsername_0) OR [a].[UserName] IS NULL) AND ([a].[Gender] = @__userParams_Gender_1)) AND ([a].[DateOfBirth] >= @__minDob_2)) AND ([a].[DateOfBirth] <= @__maxDob_3)
+    ORDER BY [a].[Id]
+    OFFSET @__p_4 ROWS FETCH NEXT @__p_5 ROWS ONLY
+) AS [t]
+LEFT JOIN [Photos] AS [p0] ON [t].[Id] = [p0].[AppUsersId]
+LEFT JOIN [Photos] AS [p1] ON [t].[Id] = [p1].[AppUsersId]
+ORDER BY [t].[Id], [p0].[Id], [p1].[Id]" (0723d8ff)
+2021-04-07T19:14:19.3422800+07:00 0HM7PNQE4R7BU:00000002 [INF] Executing "OkObjectResult", writing value of type '"api.Helpers.PageList`1[[api.DTO.MemberDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-04-07T19:14:19.3668600+07:00 0HM7PNQE4R7BU:00000002 [INF] Executed action "api.Controllers.UsersController.GetUsers (api)" in 203.3393ms (afa2e885)
+2021-04-07T19:14:19.3669380+07:00 0HM7PNQE4R7BU:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.GetUsers (api)"' (99874f2b)
+2021-04-07T19:14:19.3677810+07:00 0HM7PNQE4R7BU:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users?minAge=21&maxAge=23 - - - 200 - application/json;+charset=utf-8 296.0053ms (791a596a)
+2021-04-07T19:18:00.8475100+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T19:18:04.6663690+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:18:05.0849040+07:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:18:05.1366750+07:00  [INF] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:18:05.1433860+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:18:05.1468760+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:18:05.1668870+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T19:18:05.1966580+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-07T19:18:05.4777430+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-07T19:18:05.5148290+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T19:18:05.7141600+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T19:18:05.7142960+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T19:18:05.7144480+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T19:18:05.7144840+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T19:18:05.7145340+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T19:21:19.4812060+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T19:21:22.8993790+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:21:23.3024280+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:21:23.3478970+07:00  [INF] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:21:23.3547180+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:21:23.3574860+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:21:23.3705680+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T19:21:23.3893810+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-07T19:21:23.6015550+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-07T19:21:23.6219890+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T19:21:23.7789010+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T19:21:23.7789840+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T19:21:23.7790760+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T19:21:23.7790940+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T19:21:23.7791170+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T19:22:17.6410010+07:00 0HM7PNV4CJ1NE:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users?minAge=20&maxAge=30&orderBy=created - - (ca22a1cb)
+2021-04-07T19:22:17.8815510+07:00 0HM7PNV4CJ1NE:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-07T19:22:17.8866540+07:00 0HM7PNV4CJ1NE:00000002 [INF] Authorization was successful. (0d575a54)
+2021-04-07T19:22:17.8876270+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.GetUsers (api)"' (500cc934)
+2021-04-07T19:22:17.9208320+07:00 0HM7PNV4CJ1NE:00000002 [INF] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.MemberDto]]] GetUsers(api.Helpers.UserParams)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-07T19:22:18.1315750+07:00 0HM7PNV4CJ1NE:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:22:18.3505490+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executed DbCommand ("23"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-07T19:22:18.5451790+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=["@__userParams_CurrentUsername_0='?' (Size = 256), @__userParams_Gender_1='?' (Size = 4000), @__minDob_2='?' (DbType = DateTime2), @__maxDob_3='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE (((([a].[UserName] <> @__userParams_CurrentUsername_0) OR [a].[UserName] IS NULL) AND ([a].[Gender] = @__userParams_Gender_1)) AND ([a].[DateOfBirth] >= @__minDob_2)) AND ([a].[DateOfBirth] <= @__maxDob_3)" (0723d8ff)
+2021-04-07T19:22:18.6017730+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executed DbCommand ("14"ms) [Parameters=["@__userParams_CurrentUsername_0='?' (Size = 256), @__userParams_Gender_1='?' (Size = 4000), @__minDob_2='?' (DbType = DateTime2), @__maxDob_3='?' (DbType = DateTime2), @__p_4='?' (DbType = Int32), @__p_5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[UserName], [t].[c], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [p0].[Id], [p0].[AppUsersId], [p0].[IsMain], [p0].[PublicId], [p0].[Url], [p1].[Id], [p1].[Url], [p1].[IsMain]
+FROM (
+    SELECT [a].[Id], [a].[UserName], (
+        SELECT TOP(1) [p].[Url]
+        FROM [Photos] AS [p]
+        WHERE ([a].[Id] = [p].[AppUsersId]) AND ([p].[IsMain] = CAST(1 AS bit))) AS [c], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled]
+    FROM [AspNetUsers] AS [a]
+    WHERE (((([a].[UserName] <> @__userParams_CurrentUsername_0) OR [a].[UserName] IS NULL) AND ([a].[Gender] = @__userParams_Gender_1)) AND ([a].[DateOfBirth] >= @__minDob_2)) AND ([a].[DateOfBirth] <= @__maxDob_3)
+    ORDER BY [a].[Created] DESC
+    OFFSET @__p_4 ROWS FETCH NEXT @__p_5 ROWS ONLY
+) AS [t]
+LEFT JOIN [Photos] AS [p0] ON [t].[Id] = [p0].[AppUsersId]
+LEFT JOIN [Photos] AS [p1] ON [t].[Id] = [p1].[AppUsersId]
+ORDER BY [t].[Created] DESC, [t].[Id], [p0].[Id], [p1].[Id]" (0723d8ff)
+2021-04-07T19:22:18.6378860+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executing "OkObjectResult", writing value of type '"api.Helpers.PageList`1[[api.DTO.MemberDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-04-07T19:22:18.6733480+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executed action "api.Controllers.UsersController.GetUsers (api)" in 746.5875ms (afa2e885)
+2021-04-07T19:22:18.6741080+07:00 0HM7PNV4CJ1NE:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.GetUsers (api)"' (99874f2b)
+2021-04-07T19:22:18.6817970+07:00 0HM7PNV4CJ1NE:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users?minAge=20&maxAge=30&orderBy=created - - - 200 - application/json;+charset=utf-8 1042.8575ms (791a596a)
+2021-04-07T19:35:07.8057340+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T19:35:13.3854820+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T19:35:13.8227330+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:35:13.8685320+07:00  [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:35:13.8767930+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T19:35:13.8789690+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T19:35:13.8929570+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T19:35:13.9153450+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-07T19:35:14.2046730+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-07T19:35:14.2401790+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T19:35:14.4665530+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T19:35:14.4667340+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T19:35:14.4669470+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T19:35:14.4670270+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T19:35:14.4670930+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T20:11:03.7212690+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T20:11:08.9261480+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T20:11:08.9653380+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T20:11:09.1945060+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T20:11:09.1945480+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T20:11:09.1946830+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T20:11:09.1947120+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T20:11:09.1947430+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T20:18:29.4344260+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T20:18:33.3428170+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: Unable to determine the relationship represented by navigation 'AppUsers.LikedUsers' of type 'ICollection<UserLike>'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T20:18:33.3848500+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T20:18:33.6628550+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T20:18:33.6629050+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T20:18:33.6630820+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T20:18:33.6631370+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T20:18:33.6631660+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T20:22:39.7254070+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T20:22:43.0806960+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T20:22:43.1195630+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T20:22:43.3106620+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T20:22:43.3107060+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T20:22:43.3108660+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T20:22:43.3108990+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T20:22:43.3109360+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T20:24:54.2878180+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T20:24:57.5514130+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T20:24:57.5872430+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T20:24:57.7848190+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T20:24:57.7848610+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T20:24:57.7850710+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T20:24:57.7851120+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T20:24:57.7851410+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T20:37:36.2226640+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T20:37:41.5425940+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T20:37:41.5746220+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T20:37:41.7791360+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T20:37:41.7791770+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T20:37:41.7793100+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T20:37:41.7793880+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T20:37:41.7794210+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T20:55:05.5835250+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T20:55:10.5952470+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T20:55:10.6311440+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T20:55:10.8439360+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T20:55:10.8439790+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T20:55:10.8441080+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T20:55:10.8441350+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T20:55:10.8441610+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T21:04:11.0368340+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T21:06:31.1357780+07:00  [ERR] An error occured during migration (dd67de31)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.MigrateAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at api.Program.Main(String[] args) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Program.cs:line 30
+2021-04-07T21:06:31.1891450+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T21:06:31.4538850+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T21:06:31.4539420+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T21:06:31.4540720+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T21:06:31.4541130+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T21:06:31.4541570+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T21:06:51.4768460+07:00 0HM7PPPI4E414:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/likes?predicate=liked - - (ca22a1cb)
+2021-04-07T21:06:51.7104890+07:00 0HM7PPPI4E414:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-07T21:06:51.7132210+07:00 0HM7PPPI4E414:00000002 [INF] Executing endpoint '"api.Controllers.LikesController.GetUserLikes (api)"' (500cc934)
+2021-04-07T21:06:51.7500020+07:00 0HM7PPPI4E414:00000002 [INF] Route matched with "{action = \"GetUserLikes\", controller = \"Likes\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.LikeDto]]] GetUserLikes(System.String)" on controller "api.Controllers.LikesController" ("api"). (122b2fdf)
+2021-04-07T21:06:51.7717780+07:00 0HM7PPPI4E414:00000002 [INF] Executed action "api.Controllers.LikesController.GetUserLikes (api)" in 16.3585ms (afa2e885)
+2021-04-07T21:06:51.7725030+07:00 0HM7PPPI4E414:00000002 [INF] Executed endpoint '"api.Controllers.LikesController.GetUserLikes (api)"' (99874f2b)
+2021-04-07T21:06:51.7778330+07:00 0HM7PPPI4E414:00000002 [ERR] Value cannot be null. (Parameter 's') (31a70c5f)
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at api.Controllers.LikesController.GetUserLikes(String predicate) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Controllers/LikesController.cs:line 25
+   at lambda_method17(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at api.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Middleware/ExceptionMiddleware.cs:line 29
+2021-04-07T21:06:51.8047000+07:00 0HM7PPPI4E414:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/likes?predicate=liked - - - 500 - application/json 331.1989ms (791a596a)
+2021-04-07T21:07:12.1894960+07:00 0HM7PPPI4E416:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-04-07T21:07:12.1918400+07:00 0HM7PPPI4E416:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-07T21:07:12.1985750+07:00 0HM7PPPI4E416:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-07T21:07:12.4237530+07:00 0HM7PPPI4E416:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 225.0926ms (afa2e885)
+2021-04-07T21:07:12.4239310+07:00 0HM7PPPI4E416:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-07T21:07:12.4261570+07:00 0HM7PPPI4E416:00000002 [ERR] The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943. (073d340a)
+System.InvalidOperationException: The entity type 'UserLike' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.get_UsersSet()
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.get_Users()
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at api.Controllers.AccountController.Login(LoginDto loginDto) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Controllers/AccountController.cs:line 66
+   at lambda_method25(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at api.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Middleware/ExceptionMiddleware.cs:line 29
+2021-04-07T21:07:12.4293510+07:00 0HM7PPPI4E416:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 500 - application/json 239.8306ms (791a596a)
+2021-04-07T21:08:38.9465240+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T21:08:42.9087550+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:08:43.3891220+07:00  [INF] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T21:08:43.4442940+07:00  [INF] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T21:08:43.4563540+07:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T21:08:43.4617430+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T21:08:43.4846090+07:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T21:08:43.5164770+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-07T21:08:43.7632040+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-07T21:08:43.7902330+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T21:08:43.9817070+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T21:08:43.9818250+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T21:08:43.9819790+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T21:08:43.9820090+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T21:08:43.9820330+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T21:08:48.4829320+07:00 0HM7PPQL0MIOC:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 (ca22a1cb)
+2021-04-07T21:08:48.5488790+07:00 0HM7PPQL0MIOC:00000002 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-07T21:08:48.5786340+07:00 0HM7PPQL0MIOC:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-07T21:08:48.7789810+07:00 0HM7PPQL0MIOC:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:08:48.9987100+07:00 0HM7PPQL0MIOC:00000002 [INF] Executed DbCommand ("25"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__loginDto_Username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-07T21:08:49.2211310+07:00 0HM7PPQL0MIOC:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-07T21:08:49.3710220+07:00 0HM7PPQL0MIOC:00000002 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-07T21:08:49.3999770+07:00 0HM7PPQL0MIOC:00000002 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 813.8292ms (afa2e885)
+2021-04-07T21:08:49.4005150+07:00 0HM7PPQL0MIOC:00000002 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-07T21:08:49.4071430+07:00 0HM7PPQL0MIOC:00000002 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json 57 - 200 - application/json;+charset=utf-8 927.6125ms (791a596a)
+2021-04-07T21:09:07.3193720+07:00 0HM7PPQL0MIOE:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/likes?predicate=liked - - (ca22a1cb)
+2021-04-07T21:09:07.3838140+07:00 0HM7PPQL0MIOE:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-07T21:09:07.3848400+07:00 0HM7PPQL0MIOE:00000002 [INF] Executing endpoint '"api.Controllers.LikesController.GetUserLikes (api)"' (500cc934)
+2021-04-07T21:09:07.3887810+07:00 0HM7PPQL0MIOE:00000002 [INF] Route matched with "{action = \"GetUserLikes\", controller = \"Likes\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.LikeDto]]] GetUserLikes(System.String)" on controller "api.Controllers.LikesController" ("api"). (122b2fdf)
+2021-04-07T21:09:07.4282990+07:00 0HM7PPQL0MIOE:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:09:07.4722740+07:00 0HM7PPQL0MIOE:00000002 [ERR] Failed executing DbCommand ("7"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[UserName], [a].[KnownAs], [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], (
+    SELECT TOP(1) [p].[Url]
+    FROM [Photos] AS [p]
+    WHERE ([a].[Id] = [p].[AppUsersId]) AND ([p].[IsMain] = CAST(1 AS bit)))
+FROM [Likes] AS [l]
+INNER JOIN [AspNetUsers] AS [a] ON [l].[LikedUserId] = [a].[Id]
+WHERE [l].[SourceUserId] = @__userId_0" (627a98df)
+2021-04-07T21:09:07.4984430+07:00 0HM7PPQL0MIOE:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"api.Data.DataContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Likes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:0af0e460-019e-485b-b0e3-4df8de390577
+Error Number:208,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Likes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:0af0e460-019e-485b-b0e3-4df8de390577
+Error Number:208,State:1,Class:16
+2021-04-07T21:09:07.5000490+07:00 0HM7PPQL0MIOE:00000002 [INF] Executed action "api.Controllers.LikesController.GetUserLikes (api)" in 111.1796ms (afa2e885)
+2021-04-07T21:09:07.5002010+07:00 0HM7PPQL0MIOE:00000002 [INF] Executed endpoint '"api.Controllers.LikesController.GetUserLikes (api)"' (99874f2b)
+2021-04-07T21:09:07.5131830+07:00 0HM7PPQL0MIOE:00000002 [ERR] Invalid object name 'Likes'. (00d8f8a5)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Likes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at api.Data.LikesRepository.GetUserLikes(String predicate, Int32 userId) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Data/LikesRepository.cs:line 38
+   at api.Controllers.LikesController.GetUserLikes(String predicate) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Controllers/LikesController.cs:line 26
+   at lambda_method234(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at api.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api/Middleware/ExceptionMiddleware.cs:line 29
+ClientConnectionId:0af0e460-019e-485b-b0e3-4df8de390577
+Error Number:208,State:1,Class:16
+2021-04-07T21:09:07.5324180+07:00 0HM7PPQL0MIOE:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/likes?predicate=liked - - - 500 - application/json 213.0452ms (791a596a)
+2021-04-07T21:10:12.2653220+07:00 0HM7PPQL0MIOE:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/users?minAge=21&maxAge=23 - - (ca22a1cb)
+2021-04-07T21:10:12.2684040+07:00 0HM7PPQL0MIOE:00000003 [INF] Successfully validated the token. (60169667)
+2021-04-07T21:10:12.2718000+07:00 0HM7PPQL0MIOE:00000003 [INF] Authorization was successful. (0d575a54)
+2021-04-07T21:10:12.2726990+07:00 0HM7PPQL0MIOE:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUsers (api)"' (500cc934)
+2021-04-07T21:10:12.2797990+07:00 0HM7PPQL0MIOE:00000003 [INF] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.MemberDto]]] GetUsers(api.Helpers.UserParams)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-04-07T21:10:12.2929850+07:00 0HM7PPQL0MIOE:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:10:12.3068830+07:00 0HM7PPQL0MIOE:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-07T21:10:12.3396710+07:00 0HM7PPQL0MIOE:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userParams_CurrentUsername_0='?' (Size = 256), @__userParams_Gender_1='?' (Size = 4000), @__minDob_2='?' (DbType = DateTime2), @__maxDob_3='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE (((([a].[UserName] <> @__userParams_CurrentUsername_0) OR [a].[UserName] IS NULL) AND ([a].[Gender] = @__userParams_Gender_1)) AND ([a].[DateOfBirth] >= @__minDob_2)) AND ([a].[DateOfBirth] <= @__maxDob_3)" (0723d8ff)
+2021-04-07T21:10:12.3832590+07:00 0HM7PPQL0MIOE:00000003 [INF] Executed DbCommand ("19"ms) [Parameters=["@__userParams_CurrentUsername_0='?' (Size = 256), @__userParams_Gender_1='?' (Size = 4000), @__minDob_2='?' (DbType = DateTime2), @__maxDob_3='?' (DbType = DateTime2), @__p_4='?' (DbType = Int32), @__p_5='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[UserName], [t].[c], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [p0].[Id], [p0].[AppUsersId], [p0].[IsMain], [p0].[PublicId], [p0].[Url], [p1].[Id], [p1].[Url], [p1].[IsMain]
+FROM (
+    SELECT [a].[Id], [a].[UserName], (
+        SELECT TOP(1) [p].[Url]
+        FROM [Photos] AS [p]
+        WHERE ([a].[Id] = [p].[AppUsersId]) AND ([p].[IsMain] = CAST(1 AS bit))) AS [c], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled]
+    FROM [AspNetUsers] AS [a]
+    WHERE (((([a].[UserName] <> @__userParams_CurrentUsername_0) OR [a].[UserName] IS NULL) AND ([a].[Gender] = @__userParams_Gender_1)) AND ([a].[DateOfBirth] >= @__minDob_2)) AND ([a].[DateOfBirth] <= @__maxDob_3)
+    ORDER BY [a].[LastActive] DESC
+    OFFSET @__p_4 ROWS FETCH NEXT @__p_5 ROWS ONLY
+) AS [t]
+LEFT JOIN [Photos] AS [p0] ON [t].[Id] = [p0].[AppUsersId]
+LEFT JOIN [Photos] AS [p1] ON [t].[Id] = [p1].[AppUsersId]
+ORDER BY [t].[LastActive] DESC, [t].[Id], [p0].[Id], [p1].[Id]" (0723d8ff)
+2021-04-07T21:10:12.3940300+07:00 0HM7PPQL0MIOE:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.Helpers.PageList`1[[api.DTO.MemberDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-04-07T21:10:12.4138680+07:00 0HM7PPQL0MIOE:00000003 [INF] Executed action "api.Controllers.UsersController.GetUsers (api)" in 134.0049ms (afa2e885)
+2021-04-07T21:10:12.4139220+07:00 0HM7PPQL0MIOE:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUsers (api)"' (99874f2b)
+2021-04-07T21:10:12.4147810+07:00 0HM7PPQL0MIOE:00000003 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/users?minAge=21&maxAge=23 - - - 200 - application/json;+charset=utf-8 149.4250ms (791a596a)
+2021-04-07T21:10:50.0107450+07:00  [INF] Application is shutting down... (90f52c38)
+2021-04-07T21:11:20.6560770+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:11:33.1159870+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:11:33.4958360+07:00  [INF] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T21:11:33.5223120+07:00  [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T21:11:33.5276770+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T21:11:33.5299420+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T21:11:33.5402780+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T21:11:33.5572020+07:00  [INF] Applying migration '"20210407141120_addLikes"'. (0e2ac64d)
+2021-04-07T21:11:33.6141750+07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Likes] (
+    [LikedUserId] int NOT NULL,
+    [SourceUserId] int NOT NULL,
+    CONSTRAINT [PK_Likes] PRIMARY KEY ([SourceUserId], [LikedUserId]),
+    CONSTRAINT [FK_Likes_AspNetUsers_LikedUserId] FOREIGN KEY ([LikedUserId]) REFERENCES [AspNetUsers] ([Id]),
+    CONSTRAINT [FK_Likes_AspNetUsers_SourceUserId] FOREIGN KEY ([SourceUserId]) REFERENCES [AspNetUsers] ([Id])
+);" (0723d8ff)
+2021-04-07T21:11:33.6171640+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Likes_LikedUserId] ON [Likes] ([LikedUserId]);" (0723d8ff)
+2021-04-07T21:11:33.6208850+07:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210407141120_addLikes', N'5.0.3');" (0723d8ff)
+2021-04-07T21:11:42.3152650+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:11:42.6965480+07:00  [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T21:11:42.7373620+07:00  [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T21:11:42.7446910+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-07T21:11:42.7477800+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-07T21:11:42.7636060+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-07T21:11:42.7808810+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-07T21:11:42.9930570+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-07T21:11:43.0175470+07:00  [INF] User profile is available. Using '"/Users/ray/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2021-04-07T21:11:43.1853510+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-07T21:11:43.1854560+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-07T21:11:43.1855990+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-07T21:11:43.1856250+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-07T21:11:43.1856620+07:00  [INF] Content root path: "/Users/ray/Dropbox/Projects/dotnetCore/DatingApp2/api" (b5d60022)
+2021-04-07T21:11:48.2249390+07:00 0HM7PPSAIHM6S:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/likes?predicate=liked - - (ca22a1cb)
+2021-04-07T21:11:48.4595660+07:00 0HM7PPSAIHM6S:00000002 [INF] Successfully validated the token. (60169667)
+2021-04-07T21:11:48.4627940+07:00 0HM7PPSAIHM6S:00000002 [INF] Executing endpoint '"api.Controllers.LikesController.GetUserLikes (api)"' (500cc934)
+2021-04-07T21:11:48.4957110+07:00 0HM7PPSAIHM6S:00000002 [INF] Route matched with "{action = \"GetUserLikes\", controller = \"Likes\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.LikeDto]]] GetUserLikes(System.String)" on controller "api.Controllers.LikesController" ("api"). (122b2fdf)
+2021-04-07T21:11:48.5177900+07:00 0HM7PPSAIHM6S:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-07T21:11:48.7160120+07:00 0HM7PPSAIHM6S:00000002 [INF] Executed DbCommand ("27"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[UserName], [a].[KnownAs], [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], (
+    SELECT TOP(1) [p].[Url]
+    FROM [Photos] AS [p]
+    WHERE ([a].[Id] = [p].[AppUsersId]) AND ([p].[IsMain] = CAST(1 AS bit)))
+FROM [Likes] AS [l]
+INNER JOIN [AspNetUsers] AS [a] ON [l].[LikedUserId] = [a].[Id]
+WHERE [l].[SourceUserId] = @__userId_0" (0723d8ff)
+2021-04-07T21:11:48.7280090+07:00 0HM7PPSAIHM6S:00000002 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[api.DTO.LikeDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-04-07T21:11:48.7592930+07:00 0HM7PPSAIHM6S:00000002 [INF] Executed action "api.Controllers.LikesController.GetUserLikes (api)" in 256.5359ms (afa2e885)
+2021-04-07T21:11:48.7598210+07:00 0HM7PPSAIHM6S:00000002 [INF] Executed endpoint '"api.Controllers.LikesController.GetUserLikes (api)"' (99874f2b)
+2021-04-07T21:11:48.7677030+07:00 0HM7PPSAIHM6S:00000002 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/likes?predicate=liked - - - 200 - application/json;+charset=utf-8 545.1515ms (791a596a)
+2021-04-07T21:12:10.6219970+07:00  [INF] Application is shutting down... (90f52c38)

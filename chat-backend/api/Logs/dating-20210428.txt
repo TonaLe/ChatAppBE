@@ -1,0 +1,134 @@
+2021-04-28T20:59:51.1538111+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-28T20:59:57.9665372+07:00  [INF] Executed DbCommand ("108"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-28T20:59:58.1723460+07:00  [INF] Executed DbCommand ("184"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-28T20:59:58.1792179+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-04-28T20:59:58.1802017+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-04-28T20:59:58.4519432+07:00  [INF] Executed DbCommand ("257"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-04-28T20:59:58.5219015+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-04-28T20:59:59.4576169+07:00  [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-04-28T20:59:59.5017952+07:00  [INF] User profile is available. Using '"C:\Users\NguyenKhanh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-04-28T21:00:01.0116747+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-04-28T21:00:01.0118257+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-04-28T21:00:01.0119896+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-28T21:00:01.0120183+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-04-28T21:00:01.0120556+07:00  [INF] Content root path: "C:\Users\NguyenKhanh\Desktop\ChatByDotNet\chat-backend\api" (b5d60022)
+2021-04-28T21:02:54.4034877+07:00 0HM8A9P8P9ENL:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - (ca22a1cb)
+2021-04-28T21:02:54.4658784+07:00 0HM8A9P8P9ENL:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:02:54.5107294+07:00 0HM8A9P8P9ENL:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - - 204 - - 109.6025ms (791a596a)
+2021-04-28T21:02:54.5408657+07:00 0HM8A9P8P9ENL:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 44 (ca22a1cb)
+2021-04-28T21:02:54.5458190+07:00 0HM8A9P8P9ENL:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:02:54.6884562+07:00 0HM8A9P8P9ENL:00000003 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-28T21:02:54.7484083+07:00 0HM8A9P8P9ENL:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-28T21:02:55.1425373+07:00 0HM8A9P8P9ENL:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-28T21:02:55.8153842+07:00 0HM8A9P8P9ENL:00000003 [INF] Executed DbCommand ("464"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__loginDto_Username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-28T21:02:56.1220621+07:00 0HM8A9P8P9ENL:00000003 [INF] Executed DbCommand ("11"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-28T21:02:56.3130185+07:00 0HM8A9P8P9ENL:00000003 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-28T21:02:56.3529140+07:00 0HM8A9P8P9ENL:00000003 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 1595.6875ms (afa2e885)
+2021-04-28T21:02:56.3537398+07:00 0HM8A9P8P9ENL:00000003 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-28T21:02:56.3661608+07:00 0HM8A9P8P9ENL:00000003 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 44 - 200 - application/json;+charset=utf-8 1825.2323ms (791a596a)
+2021-04-28T21:03:21.1626603+07:00 0HM8A9P8P9ENL:00000004 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - (ca22a1cb)
+2021-04-28T21:03:21.1634424+07:00 0HM8A9P8P9ENL:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:03:21.1637940+07:00 0HM8A9P8P9ENL:00000004 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - - 204 - - 1.1459ms (791a596a)
+2021-04-28T21:03:21.1661240+07:00 0HM8A9P8P9ENL:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 44 (ca22a1cb)
+2021-04-28T21:03:21.1663505+07:00 0HM8A9P8P9ENL:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:03:21.1669178+07:00 0HM8A9P8P9ENL:00000005 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-28T21:03:21.1674474+07:00 0HM8A9P8P9ENL:00000005 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-28T21:03:21.2311552+07:00 0HM8A9P8P9ENL:00000005 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-28T21:03:21.2752306+07:00 0HM8A9P8P9ENL:00000005 [INF] Executed DbCommand ("41"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__loginDto_Username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-28T21:03:21.2865692+07:00 0HM8A9P8P9ENL:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-28T21:03:21.2872605+07:00 0HM8A9P8P9ENL:00000005 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-28T21:03:21.2876166+07:00 0HM8A9P8P9ENL:00000005 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 120.0524ms (afa2e885)
+2021-04-28T21:03:21.2876886+07:00 0HM8A9P8P9ENL:00000005 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-28T21:03:21.2880876+07:00 0HM8A9P8P9ENL:00000005 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 44 - 200 - application/json;+charset=utf-8 121.9498ms (791a596a)
+2021-04-28T21:04:11.7896113+07:00 0HM8A9P8P9ENL:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - (ca22a1cb)
+2021-04-28T21:04:11.7901781+07:00 0HM8A9P8P9ENL:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:04:11.7903109+07:00 0HM8A9P8P9ENL:00000006 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - - 204 - - 0.7040ms (791a596a)
+2021-04-28T21:04:11.7927184+07:00 0HM8A9P8P9ENL:00000007 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 44 (ca22a1cb)
+2021-04-28T21:04:11.7928869+07:00 0HM8A9P8P9ENL:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:04:11.7953065+07:00 0HM8A9P8P9ENL:00000007 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-28T21:04:11.7954604+07:00 0HM8A9P8P9ENL:00000007 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-28T21:04:11.8063744+07:00 0HM8A9P8P9ENL:00000007 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-28T21:04:11.8136564+07:00 0HM8A9P8P9ENL:00000007 [INF] Executed DbCommand ("6"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__loginDto_Username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-28T21:04:11.8411366+07:00 0HM8A9P8P9ENL:00000007 [INF] Executed DbCommand ("11"ms) [Parameters=["@__userId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0" (0723d8ff)
+2021-04-28T21:04:11.8417958+07:00 0HM8A9P8P9ENL:00000007 [INF] Executing "ObjectResult", writing value of type '"api.DTO.UserDto"'. (605b4265)
+2021-04-28T21:04:11.8420316+07:00 0HM8A9P8P9ENL:00000007 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 46.5344ms (afa2e885)
+2021-04-28T21:04:11.8420630+07:00 0HM8A9P8P9ENL:00000007 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-28T21:04:11.8421662+07:00 0HM8A9P8P9ENL:00000007 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 44 - 200 - application/json;+charset=utf-8 49.4303ms (791a596a)
+2021-04-28T21:04:12.5234114+07:00 0HM8A9P8P9ENM:00000001 [INF] Request starting HTTP/2 GET https://localhost:5001/api/users - - (ca22a1cb)
+2021-04-28T21:04:12.5241696+07:00 0HM8A9P8P9ENM:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:04:12.5299629+07:00 0HM8A9P8P9ENM:00000001 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (d3883ae7)
+2021-04-28T21:04:12.5357010+07:00 0HM8A9P8P9ENM:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2021-04-28T21:04:12.5416303+07:00 0HM8A9P8P9ENM:00000001 [INF] Request finished HTTP/2 GET https://localhost:5001/api/users - - - 401 0 - 18.1434ms (791a596a)
+2021-04-28T21:05:57.5136402+07:00 0HM8A9P8P9ENL:00000008 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - (ca22a1cb)
+2021-04-28T21:05:57.5137898+07:00 0HM8A9P8P9ENL:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:05:57.5138964+07:00 0HM8A9P8P9ENL:00000008 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/account/login - - - 204 - - 0.2855ms (791a596a)
+2021-04-28T21:05:57.5201065+07:00 0HM8A9P8P9ENL:00000009 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 38 (ca22a1cb)
+2021-04-28T21:05:57.5202193+07:00 0HM8A9P8P9ENL:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2021-04-28T21:05:57.5203469+07:00 0HM8A9P8P9ENL:00000009 [INF] Executing endpoint '"api.Controllers.AccountController.Login (api)"' (500cc934)
+2021-04-28T21:05:57.5204942+07:00 0HM8A9P8P9ENL:00000009 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.UserDto]] Login(api.DTO.LoginDto)" on controller "api.Controllers.AccountController" ("api"). (122b2fdf)
+2021-04-28T21:05:57.5213205+07:00 0HM8A9P8P9ENL:00000009 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-04-28T21:05:57.5891722+07:00 0HM8A9P8P9ENL:00000009 [INF] Executed DbCommand ("67"ms) [Parameters=["@__loginDto_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__loginDto_Username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-04-28T21:05:57.6610236+07:00 0HM8A9P8P9ENL:00000009 [WRN] Invalid password for user. (6d284782)
+2021-04-28T21:05:57.6617547+07:00 0HM8A9P8P9ENL:00000009 [WRN] User failed to provide the correct password. (a25e98da)
+2021-04-28T21:05:57.6624988+07:00 0HM8A9P8P9ENL:00000009 [INF] Executing "ObjectResult", writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (605b4265)
+2021-04-28T21:05:57.6848244+07:00 0HM8A9P8P9ENL:00000009 [INF] Executed action "api.Controllers.AccountController.Login (api)" in 164.2783ms (afa2e885)
+2021-04-28T21:05:57.6848718+07:00 0HM8A9P8P9ENL:00000009 [INF] Executed endpoint '"api.Controllers.AccountController.Login (api)"' (99874f2b)
+2021-04-28T21:05:57.6849805+07:00 0HM8A9P8P9ENL:00000009 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/account/login application/json;charset=UTF-8 38 - 401 - application/problem+json;+charset=utf-8 164.8734ms (791a596a)

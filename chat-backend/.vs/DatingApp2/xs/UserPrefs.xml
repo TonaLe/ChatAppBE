@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{C16E23BD-09C3-4169-B784-16F650D2901E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Data/MessageRepository.cs">
+    <Files>
+      <File FileName="api/Data/DataContext.cs" Line="17" Column="53" />
+      <File FileName="api/Controllers/MessagesController.cs" />
+      <File FileName="api/Data/MessageRepository.cs" Line="97" Column="46" />
+      <File FileName="api/Helpers/MessageParams.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DatingApp2" expanded="True" selected="True">
+            <Node name="api" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="DTO" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
