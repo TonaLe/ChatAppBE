@@ -17,10 +17,8 @@ namespace api.DTO
         [Required]
         public DateTime DateOfBirth { get; set; }
 
-        [Required]
         public string City { get; set; }
 
-        [Required]
         public string Country { get; set; }
 
         [Required]
