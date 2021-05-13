@@ -57,6 +57,22 @@ namespace api.Controllers
              
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetAllUsers()
+        {
+            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await _userRepository.GetUserByUsernameAsync(username);
+
+            userParams.CurrentUsername = user.UserName;
+
+            if (string.IsNullOrEmpty(userParams.Gender))
+                userParams.Gender = user.Gender == "male" ? "female" : "male";
+
+            List<MemberDto> users = await _userRepository.GetAllUsersAsync();
+            return Ok(users);
+
+        }
+
         [HttpGet("{UserName}", Name ="GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string UserName)
         {

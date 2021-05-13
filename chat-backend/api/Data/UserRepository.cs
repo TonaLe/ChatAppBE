@@ -110,5 +110,32 @@ namespace api.Data
                 
         }
 
+        public async Task<List<MemberDto>> GetAllUsersAsync()
+        {
+            return await _context.Users.Include(p => p.Photos).AsSingleQuery()
+                       .Select(user => new MemberDto
+                       {
+                           Id = user.Id,
+                           Username = user.UserName,
+                           PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain).Url,
+                           Age = user.GetAge(),
+                           KnownAs = user.KnownAs,
+                           Created = user.Created,
+                           LastActive = user.LastActive,
+                           Gender = user.Gender,
+                           Introduction = user.Introduction,
+                           LookingFor = user.LookingFor,
+                           Interests = user.Interests,
+                           City = user.City,
+                           Country = user.Country,
+                           Photos = user.Photos.Select(photo => new PhotoDto
+                           {
+                               Id = photo.Id,
+                               Url = photo.Url,
+                               IsMain = photo.IsMain
+                           }).ToList()
+                       }).ToList();
+        }
+
     }
 }
