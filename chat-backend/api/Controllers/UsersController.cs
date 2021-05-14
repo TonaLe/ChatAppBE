@@ -63,8 +63,6 @@ namespace api.Controllers
             var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = await _userRepository.GetUserByUsernameAsync(username);
 
-           
-
             List<MemberDto> users = await _userRepository.GetAllUserAsync();
             return Ok(users);
 
@@ -82,16 +80,15 @@ namespace api.Controllers
         public async Task<ActionResult<MemberDto>> GetMember(string UserName)
         {
             return Ok(await _userRepository.GetMemberAsync(UserName));
-            
         }
 
         [HttpPut]
-        public async Task<ActionResult> UpdateUser(MemberDto memberDto)
+        public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
             var UserName = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = await _userRepository.GetUserByUsernameAsync(UserName);
 
-            _mapper.Map(memberDto, user);
+            _mapper.Map(memberUpdateDto, user);
 
             _userRepository.Update(user);
 
