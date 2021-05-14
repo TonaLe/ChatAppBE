@@ -110,9 +110,9 @@ namespace api.Data
                 
         }
 
-        public async Task<List<MemberDto>> GetAllUsersAsync()
+        public async Task<List<MemberDto>> GetAllUserAsync()
         {
-            return await _context.Users.Include(p => p.Photos).AsSingleQuery()
+            return await _context.Users
                        .Select(user => new MemberDto
                        {
                            Id = user.Id,
@@ -134,8 +134,7 @@ namespace api.Data
                                Url = photo.Url,
                                IsMain = photo.IsMain
                            }).ToList()
-                       }).ToList();
+                       }).ToListAsync();
         }
-
     }
 }

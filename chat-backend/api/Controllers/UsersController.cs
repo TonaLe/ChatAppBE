@@ -36,7 +36,7 @@ namespace api.Controllers
             _photoService = photoService;
         }
 
-        [HttpGet]
+        [HttpGet("abc/{UserName}")]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers(
                                 [FromQuery]UserParams userParams)
         {
@@ -63,12 +63,9 @@ namespace api.Controllers
             var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = await _userRepository.GetUserByUsernameAsync(username);
 
-            userParams.CurrentUsername = user.UserName;
+           
 
-            if (string.IsNullOrEmpty(userParams.Gender))
-                userParams.Gender = user.Gender == "male" ? "female" : "male";
-
-            List<MemberDto> users = await _userRepository.GetAllUsersAsync();
+            List<MemberDto> users = await _userRepository.GetAllUserAsync();
             return Ok(users);
 
         }
