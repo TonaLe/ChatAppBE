@@ -1540,3 +1540,870 @@ ORDER BY [t].[MessageSent] DESC" (0723d8ff)
 2021-05-14T20:27:58.9601831+07:00 0HM8MRBPS00GD:00000003 [INF] Executed action "api.Controllers.MessagesController.GetMessagesForUser (api)" in 24.0325ms (afa2e885)
 2021-05-14T20:27:58.9602381+07:00 0HM8MRBPS00GD:00000003 [INF] Executed endpoint '"api.Controllers.MessagesController.GetMessagesForUser (api)"' (99874f2b)
 2021-05-14T20:27:58.9603519+07:00 0HM8MRBPS00GD:00000003 [INF] Request finished HTTP/2 GET https://localhost:5001/api/messages?Username=raymond&Container=Inbox - - - 200 - application/json;+charset=utf-8 24.6314ms (791a596a)
+2021-05-14T20:29:01.9033383+07:00 0HM8MRBPS00GE:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:29:01.9036213+07:00 0HM8MRBPS00GE:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:29:01.9039373+07:00 0HM8MRBPS00GE:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.6306ms (791a596a)
+2021-05-14T20:29:01.9108938+07:00 0HM8MRBPS00GE:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:29:01.9133490+07:00 0HM8MRBPS00GE:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:29:01.9137679+07:00 0HM8MRBPS00GE:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:29:01.9138826+07:00 0HM8MRBPS00GE:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:29:01.9139094+07:00 0HM8MRBPS00GE:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T20:29:01.9193943+07:00 0HM8MRBPS00GE:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:29:01.9219184+07:00 0HM8MRBPS00GE:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:29:01.9404265+07:00 0HM8MRBPS00GE:00000003 [INF] Executed DbCommand ("18"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:29:01.9610200+07:00 0HM8MRBPS00GE:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T20:29:01.9613609+07:00 0HM8MRBPS00GE:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 41.9199ms (afa2e885)
+2021-05-14T20:29:01.9613967+07:00 0HM8MRBPS00GE:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T20:29:01.9615206+07:00 0HM8MRBPS00GE:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 50.6314ms (791a596a)
+2021-05-14T20:34:32.5639047+07:00 0HM8MRBPS00GF:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:34:32.5640532+07:00 0HM8MRBPS00GF:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:34:32.5642549+07:00 0HM8MRBPS00GF:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.3612ms (791a596a)
+2021-05-14T20:34:33.0580208+07:00 0HM8MRBPS00GF:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:34:33.0584756+07:00 0HM8MRBPS00GF:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:34:33.0593303+07:00 0HM8MRBPS00GF:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:34:33.0594420+07:00 0HM8MRBPS00GF:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:34:33.0596182+07:00 0HM8MRBPS00GF:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T20:34:33.0598330+07:00 0HM8MRBPS00GF:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:34:33.0610651+07:00 0HM8MRBPS00GF:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:34:47.9022438+07:00 0HM8MRBPS00GF:00000003 [INF] Executed DbCommand ("1,791"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:34:47.9039065+07:00 0HM8MRBPS00GF:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T20:34:47.9044879+07:00 0HM8MRBPS00GF:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 14844.5732ms (afa2e885)
+2021-05-14T20:34:47.9046111+07:00 0HM8MRBPS00GF:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T20:34:47.9048491+07:00 0HM8MRBPS00GF:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 14846.9041ms (791a596a)
+2021-05-14T20:35:49.9091782+07:00 0HM8MRBPS00GF:00000004 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:35:49.9097763+07:00 0HM8MRBPS00GF:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:35:49.9099591+07:00 0HM8MRBPS00GF:00000004 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.7917ms (791a596a)
+2021-05-14T20:35:49.9138099+07:00 0HM8MRBPS00GF:00000005 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users/raymond application/json;charset=UTF-8 509 (ca22a1cb)
+2021-05-14T20:35:49.9138859+07:00 0HM8MRBPS00GF:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:35:49.9140888+07:00 0HM8MRBPS00GF:00000005 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:35:49.9141479+07:00 0HM8MRBPS00GF:00000005 [INF] Executing endpoint '"405 HTTP Method Not Supported"' (500cc934)
+2021-05-14T20:35:49.9143353+07:00 0HM8MRBPS00GF:00000005 [INF] Executed endpoint '"405 HTTP Method Not Supported"' (99874f2b)
+2021-05-14T20:35:49.9144457+07:00 0HM8MRBPS00GF:00000005 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users/raymond application/json;charset=UTF-8 509 - 405 0 - 0.6505ms (791a596a)
+2021-05-14T20:37:18.9170868+07:00 0HM8MRBPS00GH:00000002 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json 147 (ca22a1cb)
+2021-05-14T20:37:18.9176112+07:00 0HM8MRBPS00GH:00000002 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:37:18.9177838+07:00 0HM8MRBPS00GH:00000002 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:37:18.9178398+07:00 0HM8MRBPS00GH:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T20:37:18.9235900+07:00 0HM8MRBPS00GH:00000002 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:37:18.9706271+07:00 0HM8MRBPS00GH:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:37:19.3963520+07:00 0HM8MRBPS00GH:00000002 [INF] Executed DbCommand ("91"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:37:19.5020468+07:00 0HM8MRBPS00GH:00000002 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 578.3811ms (afa2e885)
+2021-05-14T20:37:19.5022155+07:00 0HM8MRBPS00GH:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T20:37:19.6971774+07:00 0HM8MRBPS00GH:00000002 [ERR] The property 'AppUsers.Id' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key, first delete the dependent and invoke 'SaveChanges', and then associate the dependent with the new principal. (a36a409d)
+System.InvalidOperationException: The property 'AppUsers.Id' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key, first delete the dependent and invoke 'SaveChanges', and then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull, Boolean acceptChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.<LocalDetectChanges>g__SetPropertyModified|12_0(<>c__DisplayClass12_0& , <>c__DisplayClass12_1& , <>c__DisplayClass12_2& )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.LocalDetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(InternalEntityEntry entry, HashSet`1 visited)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges(EntityEntry entry)
+   at Microsoft.EntityFrameworkCore.DbContext.Entry[TEntity](TEntity entity)
+   at api.Data.UserRepository.Update(AppUsers user) in C:\Users\NguyenKhanh\Desktop\ChatApp\ChatAppBE\chat-backend\api\Data\UserRepository.cs:line 82
+   at api.Controllers.UsersController.UpdateUser(MemberDto memberDto) in C:\Users\NguyenKhanh\Desktop\ChatApp\ChatAppBE\chat-backend\api\Controllers\UsersController.cs:line 96
+   at lambda_method486(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at api.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\NguyenKhanh\Desktop\ChatApp\ChatAppBE\chat-backend\api\Middleware\ExceptionMiddleware.cs:line 29
+2021-05-14T20:37:19.7134512+07:00 0HM8MRBPS00GH:00000002 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json 147 - 500 - application/json 796.3906ms (791a596a)
+2021-05-14T20:38:03.7016151+07:00 0HM8MRBPS00GI:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:38:03.7016894+07:00 0HM8MRBPS00GI:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:38:03.7018002+07:00 0HM8MRBPS00GI:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.1952ms (791a596a)
+2021-05-14T20:38:03.7051573+07:00 0HM8MRBPS00GI:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:38:03.7052385+07:00 0HM8MRBPS00GI:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:38:03.7058645+07:00 0HM8MRBPS00GI:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:38:03.7059559+07:00 0HM8MRBPS00GI:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:38:03.7059860+07:00 0HM8MRBPS00GI:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T20:38:03.7060609+07:00 0HM8MRBPS00GI:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:38:03.7071530+07:00 0HM8MRBPS00GI:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:38:03.7467986+07:00 0HM8MRBPS00GI:00000003 [INF] Executed DbCommand ("39"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:38:03.7474132+07:00 0HM8MRBPS00GI:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T20:38:03.7475636+07:00 0HM8MRBPS00GI:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 41.4723ms (afa2e885)
+2021-05-14T20:38:03.7475924+07:00 0HM8MRBPS00GI:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T20:38:03.7476742+07:00 0HM8MRBPS00GI:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 42.5163ms (791a596a)
+2021-05-14T20:43:10.4023523+07:00 0HM8MRBPS00GJ:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:43:10.4025654+07:00 0HM8MRBPS00GJ:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:43:10.4026982+07:00 0HM8MRBPS00GJ:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.3530ms (791a596a)
+2021-05-14T20:43:10.4089189+07:00 0HM8MRBPS00GJ:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:43:10.4089937+07:00 0HM8MRBPS00GJ:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:43:10.4092778+07:00 0HM8MRBPS00GJ:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:43:10.4093756+07:00 0HM8MRBPS00GJ:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:43:10.4094061+07:00 0HM8MRBPS00GJ:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T20:43:10.4094960+07:00 0HM8MRBPS00GJ:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:43:10.4104145+07:00 0HM8MRBPS00GJ:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:43:10.9299731+07:00 0HM8MRBPS00GJ:00000003 [INF] Executed DbCommand ("31"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:43:10.9310521+07:00 0HM8MRBPS00GJ:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T20:43:10.9317935+07:00 0HM8MRBPS00GJ:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 522.2346ms (afa2e885)
+2021-05-14T20:43:10.9318795+07:00 0HM8MRBPS00GJ:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T20:43:10.9320713+07:00 0HM8MRBPS00GJ:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 523.1117ms (791a596a)
+2021-05-14T20:51:36.6071527+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:51:37.2999762+07:00  [INF] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-05-14T20:51:37.3491514+07:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-05-14T20:51:37.3552243+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-05-14T20:51:37.3562937+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-05-14T20:51:37.4013470+07:00  [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-05-14T20:51:37.4432220+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-05-14T20:51:37.7458574+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-05-14T20:51:37.7718537+07:00  [INF] User profile is available. Using '"C:\Users\NguyenKhanh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-05-14T20:51:37.9800325+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-05-14T20:51:37.9801570+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-05-14T20:51:37.9803217+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-14T20:51:37.9803647+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-14T20:51:37.9804092+07:00  [INF] Content root path: "C:\Users\NguyenKhanh\Desktop\ChatApp\ChatAppBE\chat-backend\api" (b5d60022)
+2021-05-14T20:51:50.7100185+07:00 0HM8MRTMAROD6:00000002 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json 147 (ca22a1cb)
+2021-05-14T20:51:50.9663863+07:00 0HM8MRTMAROD6:00000002 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:51:50.9749277+07:00 0HM8MRTMAROD6:00000002 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:51:50.9757024+07:00 0HM8MRTMAROD6:00000002 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T20:51:51.0096788+07:00 0HM8MRTMAROD6:00000002 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:51:51.2593779+07:00 0HM8MRTMAROD6:00000002 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:51:51.7989689+07:00 0HM8MRTMAROD6:00000002 [INF] Executed DbCommand ("287"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:51:52.6553875+07:00 0HM8MRTMAROD6:00000002 [INF] Executed DbCommand ("444"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T20:51:52.7206721+07:00 0HM8MRTMAROD6:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T20:51:52.7286758+07:00 0HM8MRTMAROD6:00000002 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 1711.9839ms (afa2e885)
+2021-05-14T20:51:52.7293568+07:00 0HM8MRTMAROD6:00000002 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T20:51:52.7404787+07:00 0HM8MRTMAROD6:00000002 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json 147 - 204 - - 2033.2934ms (791a596a)
+2021-05-14T20:55:20.8660654+07:00  [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:55:21.5310381+07:00  [INF] Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-05-14T20:55:21.6841250+07:00  [INF] Executed DbCommand ("121"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-05-14T20:55:21.6920481+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2021-05-14T20:55:21.6930676+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2021-05-14T20:55:21.7087868+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2021-05-14T20:55:21.7408623+07:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2021-05-14T20:55:22.0708113+07:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2021-05-14T20:55:22.1005833+07:00  [INF] User profile is available. Using '"C:\Users\NguyenKhanh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-05-14T20:55:22.3367683+07:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-05-14T20:55:22.3369035+07:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-05-14T20:55:22.3370816+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-05-14T20:55:22.3371295+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-05-14T20:55:22.3371730+07:00  [INF] Content root path: "C:\Users\NguyenKhanh\Desktop\ChatApp\ChatAppBE\chat-backend\api" (b5d60022)
+2021-05-14T20:55:57.2844751+07:00 0HM8MRVVPAGV3:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:55:57.3706803+07:00 0HM8MRVVPAGV3:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:55:57.3789458+07:00 0HM8MRVVPAGV3:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 99.3667ms (791a596a)
+2021-05-14T20:55:57.3988562+07:00 0HM8MRVVPAGV3:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T20:55:57.4040140+07:00 0HM8MRVVPAGV3:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T20:55:57.7174783+07:00 0HM8MRVVPAGV3:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T20:55:57.7268246+07:00 0HM8MRVVPAGV3:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T20:55:57.7281696+07:00 0HM8MRVVPAGV3:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T20:55:57.7775725+07:00 0HM8MRVVPAGV3:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T20:55:58.1151161+07:00 0HM8MRVVPAGV3:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T20:55:58.5597882+07:00 0HM8MRVVPAGV3:00000003 [INF] Executed DbCommand ("121"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T20:55:58.8731981+07:00 0HM8MRVVPAGV3:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T20:55:58.9467224+07:00 0HM8MRVVPAGV3:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 1161.1065ms (afa2e885)
+2021-05-14T20:55:58.9474942+07:00 0HM8MRVVPAGV3:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T20:55:58.9616163+07:00 0HM8MRVVPAGV3:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 1562.7202ms (791a596a)
+2021-05-14T21:05:04.2563816+07:00 0HM8MRVVPAGV4:00000001 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/messages?Username=raymond&Container=Inbox - - (ca22a1cb)
+2021-05-14T21:05:04.2575266+07:00 0HM8MRVVPAGV4:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:04.2636763+07:00 0HM8MRVVPAGV4:00000001 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/messages?Username=raymond&Container=Inbox - - - 204 - - 7.2486ms (791a596a)
+2021-05-14T21:05:04.2709826+07:00 0HM8MRVVPAGV4:00000003 [INF] Request starting HTTP/2 GET https://localhost:5001/api/messages?Username=raymond&Container=Inbox - - (ca22a1cb)
+2021-05-14T21:05:04.2712938+07:00 0HM8MRVVPAGV4:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:04.2729727+07:00 0HM8MRVVPAGV4:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:04.2736668+07:00 0HM8MRVVPAGV4:00000003 [INF] Executing endpoint '"api.Controllers.MessagesController.GetMessagesForUser (api)"' (500cc934)
+2021-05-14T21:05:04.2938602+07:00 0HM8MRVVPAGV4:00000003 [INF] Route matched with "{action = \"GetMessagesForUser\", controller = \"Messages\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[api.DTO.MessageDto]]] GetMessagesForUser(api.Helpers.MessageParam)" on controller "api.Controllers.MessagesController" ("api"). (122b2fdf)
+2021-05-14T21:05:04.3970433+07:00 0HM8MRVVPAGV4:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:05:04.7816933+07:00 0HM8MRVVPAGV4:00000003 [INF] Executed DbCommand ("27"ms) [Parameters=["@__messageParam_Username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Messages] AS [m]
+INNER JOIN [AspNetUsers] AS [a] ON [m].[RecipientId] = [a].[Id]
+WHERE ([a].[UserName] = @__messageParam_Username_0) AND ([m].[RecipientDeleted] <> CAST(1 AS bit))" (0723d8ff)
+2021-05-14T21:05:04.8837332+07:00 0HM8MRVVPAGV4:00000003 [INF] Executed DbCommand ("29"ms) [Parameters=["@__messageParam_Username_0='?' (Size = 256), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[SenderId], [t].[SenderUsername], (
+    SELECT TOP(1) [p].[Url]
+    FROM [Photos] AS [p]
+    WHERE ([a0].[Id] = [p].[AppUsersId]) AND ([p].[IsMain] = CAST(1 AS bit))) AS [SenderPhotoUrl], [t].[RecipientId], [t].[RecipientUsername], (
+    SELECT TOP(1) [p0].[Url]
+    FROM [Photos] AS [p0]
+    WHERE ([t].[Id0] = [p0].[AppUsersId]) AND ([p0].[IsMain] = CAST(1 AS bit))) AS [RecipientPhotoUrl], [t].[Content], [t].[DateRead], [t].[MessageSent]
+FROM (
+    SELECT [m].[Id], [m].[Content], [m].[DateRead], [m].[MessageSent], [m].[RecipientId], [m].[RecipientUsername], [m].[SenderId], [m].[SenderUsername], [a].[Id] AS [Id0]
+    FROM [Messages] AS [m]
+    INNER JOIN [AspNetUsers] AS [a] ON [m].[RecipientId] = [a].[Id]
+    WHERE ([a].[UserName] = @__messageParam_Username_0) AND ([m].[RecipientDeleted] <> CAST(1 AS bit))
+    ORDER BY [m].[MessageSent] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[SenderId] = [a0].[Id]
+ORDER BY [t].[MessageSent] DESC" (0723d8ff)
+2021-05-14T21:05:04.8964800+07:00 0HM8MRVVPAGV4:00000003 [INF] Executing "ObjectResult", writing value of type '"api.Helpers.PageList`1[[api.DTO.MessageDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2021-05-14T21:05:04.9053590+07:00 0HM8MRVVPAGV4:00000003 [INF] Executed action "api.Controllers.MessagesController.GetMessagesForUser (api)" in 611.3315ms (afa2e885)
+2021-05-14T21:05:04.9054310+07:00 0HM8MRVVPAGV4:00000003 [INF] Executed endpoint '"api.Controllers.MessagesController.GetMessagesForUser (api)"' (99874f2b)
+2021-05-14T21:05:04.9060106+07:00 0HM8MRVVPAGV4:00000003 [INF] Request finished HTTP/2 GET https://localhost:5001/api/messages?Username=raymond&Container=Inbox - - - 200 - application/json;+charset=utf-8 635.0226ms (791a596a)
+2021-05-14T21:05:14.8626750+07:00 0HM8MRVVPAGV5:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:14.8630173+07:00 0HM8MRVVPAGV5:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:14.8634155+07:00 0HM8MRVVPAGV5:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.7220ms (791a596a)
+2021-05-14T21:05:14.8708084+07:00 0HM8MRVVPAGV5:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:14.8711772+07:00 0HM8MRVVPAGV5:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:14.8792012+07:00 0HM8MRVVPAGV5:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:14.8820525+07:00 0HM8MRVVPAGV5:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:05:14.8824805+07:00 0HM8MRVVPAGV5:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:05:14.8829997+07:00 0HM8MRVVPAGV5:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:05:14.8918612+07:00 0HM8MRVVPAGV5:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:05:14.9425106+07:00 0HM8MRVVPAGV5:00000003 [INF] Executed DbCommand ("39"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:05:14.9452631+07:00 0HM8MRVVPAGV5:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:05:14.9460980+07:00 0HM8MRVVPAGV5:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 62.9656ms (afa2e885)
+2021-05-14T21:05:14.9463539+07:00 0HM8MRVVPAGV5:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:05:14.9466855+07:00 0HM8MRVVPAGV5:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 75.8471ms (791a596a)
+2021-05-14T21:05:17.6179298+07:00 0HM8MRVVPAGV5:00000004 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:17.6181958+07:00 0HM8MRVVPAGV5:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:17.6184159+07:00 0HM8MRVVPAGV5:00000004 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.4833ms (791a596a)
+2021-05-14T21:05:17.6207303+07:00 0HM8MRVVPAGV5:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:17.6210278+07:00 0HM8MRVVPAGV5:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:17.6213267+07:00 0HM8MRVVPAGV5:00000005 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:17.6221600+07:00 0HM8MRVVPAGV5:00000005 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:05:17.6224158+07:00 0HM8MRVVPAGV5:00000005 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:05:17.6225521+07:00 0HM8MRVVPAGV5:00000005 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:05:17.6239117+07:00 0HM8MRVVPAGV5:00000005 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:05:17.6272633+07:00 0HM8MRVVPAGV5:00000005 [INF] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:05:17.6278147+07:00 0HM8MRVVPAGV5:00000005 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:05:17.6280477+07:00 0HM8MRVVPAGV5:00000005 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 5.4582ms (afa2e885)
+2021-05-14T21:05:17.6281390+07:00 0HM8MRVVPAGV5:00000005 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:05:17.6283048+07:00 0HM8MRVVPAGV5:00000005 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 7.5456ms (791a596a)
+2021-05-14T21:05:35.8696080+07:00 0HM8MRVVPAGV5:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users} - - (ca22a1cb)
+2021-05-14T21:05:35.8697180+07:00 0HM8MRVVPAGV5:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:35.8699559+07:00 0HM8MRVVPAGV5:00000006 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users} - - - 204 - - 0.3347ms (791a596a)
+2021-05-14T21:05:35.8726643+07:00 0HM8MRVVPAGV5:00000007 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users} application/json;charset=UTF-8 121 (ca22a1cb)
+2021-05-14T21:05:35.8727472+07:00 0HM8MRVVPAGV5:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:35.8730929+07:00 0HM8MRVVPAGV5:00000007 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:35.8734436+07:00 0HM8MRVVPAGV5:00000007 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users} application/json;charset=UTF-8 121 - 404 0 - 0.7349ms (791a596a)
+2021-05-14T21:05:46.1403155+07:00 0HM8MRVVPAGV5:00000008 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:46.1406199+07:00 0HM8MRVVPAGV5:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:46.1407834+07:00 0HM8MRVVPAGV5:00000008 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.4350ms (791a596a)
+2021-05-14T21:05:46.1447716+07:00 0HM8MRVVPAGV5:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:46.1448688+07:00 0HM8MRVVPAGV5:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:46.1451560+07:00 0HM8MRVVPAGV5:00000009 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:46.1452512+07:00 0HM8MRVVPAGV5:00000009 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:05:46.1452949+07:00 0HM8MRVVPAGV5:00000009 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:05:46.1454062+07:00 0HM8MRVVPAGV5:00000009 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:05:46.1482107+07:00 0HM8MRVVPAGV5:00000009 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:05:46.1851670+07:00 0HM8MRVVPAGV5:00000009 [INF] Executed DbCommand ("36"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:05:46.1859435+07:00 0HM8MRVVPAGV5:00000009 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:05:46.1861688+07:00 0HM8MRVVPAGV5:00000009 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 40.7269ms (afa2e885)
+2021-05-14T21:05:46.1862058+07:00 0HM8MRVVPAGV5:00000009 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:05:46.1863135+07:00 0HM8MRVVPAGV5:00000009 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 41.5318ms (791a596a)
+2021-05-14T21:05:49.1121580+07:00 0HM8MRVVPAGV5:0000000A [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:05:49.1147268+07:00 0HM8MRVVPAGV5:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:49.1148942+07:00 0HM8MRVVPAGV5:0000000A [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 2.7241ms (791a596a)
+2021-05-14T21:05:49.1177212+07:00 0HM8MRVVPAGV5:0000000B [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 130 (ca22a1cb)
+2021-05-14T21:05:49.1178250+07:00 0HM8MRVVPAGV5:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:49.1180905+07:00 0HM8MRVVPAGV5:0000000B [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:49.1181986+07:00 0HM8MRVVPAGV5:0000000B [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:05:49.1182358+07:00 0HM8MRVVPAGV5:0000000B [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:05:49.1239943+07:00 0HM8MRVVPAGV5:0000000B [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:05:49.1439064+07:00 0HM8MRVVPAGV5:0000000B [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:05:49.1450399+07:00 0HM8MRVVPAGV5:0000000B [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:05:49.4429221+07:00 0HM8MRVVPAGV5:0000000B [INF] Executed DbCommand ("14"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:05:49.5052830+07:00 0HM8MRVVPAGV5:0000000B [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:05:49.5053889+07:00 0HM8MRVVPAGV5:0000000B [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 381.3471ms (afa2e885)
+2021-05-14T21:05:49.5054278+07:00 0HM8MRVVPAGV5:0000000B [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:05:49.5055922+07:00 0HM8MRVVPAGV5:0000000B [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 130 - 204 - - 387.8751ms (791a596a)
+2021-05-14T21:05:49.5349031+07:00 0HM8MRVVPAGV5:0000000C [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:49.5349876+07:00 0HM8MRVVPAGV5:0000000C [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:49.5352565+07:00 0HM8MRVVPAGV5:0000000C [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.3352ms (791a596a)
+2021-05-14T21:05:49.5425846+07:00 0HM8MRVVPAGV5:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:05:49.5426683+07:00 0HM8MRVVPAGV5:0000000D [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:05:49.5436287+07:00 0HM8MRVVPAGV5:0000000D [INF] Successfully validated the token. (60169667)
+2021-05-14T21:05:49.5437624+07:00 0HM8MRVVPAGV5:0000000D [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:05:49.5437953+07:00 0HM8MRVVPAGV5:0000000D [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:05:49.5438999+07:00 0HM8MRVVPAGV5:0000000D [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:05:49.5445822+07:00 0HM8MRVVPAGV5:0000000D [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:05:49.5496819+07:00 0HM8MRVVPAGV5:0000000D [INF] Executed DbCommand ("4"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:05:49.5502037+07:00 0HM8MRVVPAGV5:0000000D [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:05:49.5503602+07:00 0HM8MRVVPAGV5:0000000D [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 6.414ms (afa2e885)
+2021-05-14T21:05:49.5503967+07:00 0HM8MRVVPAGV5:0000000D [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:05:49.5505145+07:00 0HM8MRVVPAGV5:0000000D [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 7.9231ms (791a596a)
+2021-05-14T21:07:26.3199134+07:00 0HM8MRVVPAGV5:0000000E [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:07:26.3202155+07:00 0HM8MRVVPAGV5:0000000E [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:07:26.3204222+07:00 0HM8MRVVPAGV5:0000000E [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.4845ms (791a596a)
+2021-05-14T21:07:26.3293653+07:00 0HM8MRVVPAGV5:0000000F [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 (ca22a1cb)
+2021-05-14T21:07:26.3296067+07:00 0HM8MRVVPAGV5:0000000F [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:07:26.3300663+07:00 0HM8MRVVPAGV5:0000000F [INF] Successfully validated the token. (60169667)
+2021-05-14T21:07:26.3301982+07:00 0HM8MRVVPAGV5:0000000F [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:07:26.3302666+07:00 0HM8MRVVPAGV5:0000000F [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:07:26.3304100+07:00 0HM8MRVVPAGV5:0000000F [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:07:26.3316527+07:00 0HM8MRVVPAGV5:0000000F [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:07:26.3505936+07:00 0HM8MRVVPAGV5:0000000F [INF] Executed DbCommand ("18"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:07:26.3650554+07:00 0HM8MRVVPAGV5:0000000F [INF] Executed DbCommand ("9"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:07:26.4190559+07:00 0HM8MRVVPAGV5:0000000F [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:07:26.4191516+07:00 0HM8MRVVPAGV5:0000000F [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 88.6932ms (afa2e885)
+2021-05-14T21:07:26.4192493+07:00 0HM8MRVVPAGV5:0000000F [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:07:26.4194585+07:00 0HM8MRVVPAGV5:0000000F [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 - 204 - - 90.0805ms (791a596a)
+2021-05-14T21:07:26.4592151+07:00 0HM8MRVVPAGV5:00000010 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:07:26.4596663+07:00 0HM8MRVVPAGV5:00000010 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:07:26.4598627+07:00 0HM8MRVVPAGV5:00000010 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.8748ms (791a596a)
+2021-05-14T21:07:26.4651996+07:00 0HM8MRVVPAGV5:00000011 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:07:26.4656134+07:00 0HM8MRVVPAGV5:00000011 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:07:26.4662671+07:00 0HM8MRVVPAGV5:00000011 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:07:26.4663912+07:00 0HM8MRVVPAGV5:00000011 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:07:26.4664589+07:00 0HM8MRVVPAGV5:00000011 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:07:26.4666091+07:00 0HM8MRVVPAGV5:00000011 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:07:26.4673203+07:00 0HM8MRVVPAGV5:00000011 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:07:26.4691898+07:00 0HM8MRVVPAGV5:00000011 [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:07:26.4699507+07:00 0HM8MRVVPAGV5:00000011 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:07:26.4702506+07:00 0HM8MRVVPAGV5:00000011 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 3.5865ms (afa2e885)
+2021-05-14T21:07:26.4703808+07:00 0HM8MRVVPAGV5:00000011 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:07:26.4705502+07:00 0HM8MRVVPAGV5:00000011 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 5.3545ms (791a596a)
+2021-05-14T21:09:23.7496625+07:00 0HM8MRVVPAGV5:00000012 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:09:23.7498476+07:00 0HM8MRVVPAGV5:00000012 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:09:23.7499878+07:00 0HM8MRVVPAGV5:00000012 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.3478ms (791a596a)
+2021-05-14T21:09:23.7541227+07:00 0HM8MRVVPAGV5:00000013 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 (ca22a1cb)
+2021-05-14T21:09:23.7543107+07:00 0HM8MRVVPAGV5:00000013 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:09:23.7551757+07:00 0HM8MRVVPAGV5:00000013 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:09:23.7553853+07:00 0HM8MRVVPAGV5:00000013 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:09:23.7554491+07:00 0HM8MRVVPAGV5:00000013 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:09:23.7556351+07:00 0HM8MRVVPAGV5:00000013 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:09:23.7569530+07:00 0HM8MRVVPAGV5:00000013 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:09:23.7676986+07:00 0HM8MRVVPAGV5:00000013 [INF] Executed DbCommand ("10"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:09:23.7872757+07:00 0HM8MRVVPAGV5:00000013 [INF] Executed DbCommand ("17"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:09:23.7891654+07:00 0HM8MRVVPAGV5:00000013 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:09:23.7893149+07:00 0HM8MRVVPAGV5:00000013 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 33.6126ms (afa2e885)
+2021-05-14T21:09:23.7894432+07:00 0HM8MRVVPAGV5:00000013 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:09:23.7896189+07:00 0HM8MRVVPAGV5:00000013 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 - 204 - - 35.4902ms (791a596a)
+2021-05-14T21:09:23.8290782+07:00 0HM8MRVVPAGV5:00000014 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:09:23.8293115+07:00 0HM8MRVVPAGV5:00000014 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:09:23.8294005+07:00 0HM8MRVVPAGV5:00000014 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.3279ms (791a596a)
+2021-05-14T21:09:23.8333415+07:00 0HM8MRVVPAGV5:00000015 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:09:23.8334551+07:00 0HM8MRVVPAGV5:00000015 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:09:23.8336895+07:00 0HM8MRVVPAGV5:00000015 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:09:23.8337747+07:00 0HM8MRVVPAGV5:00000015 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:09:23.8338092+07:00 0HM8MRVVPAGV5:00000015 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:09:23.8339336+07:00 0HM8MRVVPAGV5:00000015 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:09:23.8344789+07:00 0HM8MRVVPAGV5:00000015 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:09:23.8355259+07:00 0HM8MRVVPAGV5:00000015 [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:09:23.8363786+07:00 0HM8MRVVPAGV5:00000015 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:09:23.8366006+07:00 0HM8MRVVPAGV5:00000015 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 2.6312ms (afa2e885)
+2021-05-14T21:09:23.8366364+07:00 0HM8MRVVPAGV5:00000015 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:09:23.8367384+07:00 0HM8MRVVPAGV5:00000015 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 3.3855ms (791a596a)
+2021-05-14T21:10:01.8372989+07:00 0HM8MRVVPAGV5:00000016 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:10:01.8374269+07:00 0HM8MRVVPAGV5:00000016 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:10:01.8375553+07:00 0HM8MRVVPAGV5:00000016 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.2546ms (791a596a)
+2021-05-14T21:10:01.9290407+07:00 0HM8MRVVPAGV5:00000017 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:10:01.9291684+07:00 0HM8MRVVPAGV5:00000017 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:10:01.9295341+07:00 0HM8MRVVPAGV5:00000017 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:10:01.9296862+07:00 0HM8MRVVPAGV5:00000017 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:10:01.9297343+07:00 0HM8MRVVPAGV5:00000017 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:10:01.9298518+07:00 0HM8MRVVPAGV5:00000017 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:10:01.9313695+07:00 0HM8MRVVPAGV5:00000017 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:10:01.9703261+07:00 0HM8MRVVPAGV5:00000017 [INF] Executed DbCommand ("38"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:10:01.9708477+07:00 0HM8MRVVPAGV5:00000017 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:10:01.9710031+07:00 0HM8MRVVPAGV5:00000017 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 41.1096ms (afa2e885)
+2021-05-14T21:10:01.9710376+07:00 0HM8MRVVPAGV5:00000017 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:10:01.9711027+07:00 0HM8MRVVPAGV5:00000017 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 42.0779ms (791a596a)
+2021-05-14T21:10:59.7884485+07:00 0HM8MRVVPAGV5:00000018 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:10:59.7886269+07:00 0HM8MRVVPAGV5:00000018 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:10:59.7887448+07:00 0HM8MRVVPAGV5:00000018 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.3440ms (791a596a)
+2021-05-14T21:10:59.7924780+07:00 0HM8MRVVPAGV5:00000019 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 (ca22a1cb)
+2021-05-14T21:10:59.7925834+07:00 0HM8MRVVPAGV5:00000019 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:10:59.7929054+07:00 0HM8MRVVPAGV5:00000019 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:10:59.7930287+07:00 0HM8MRVVPAGV5:00000019 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:10:59.7930737+07:00 0HM8MRVVPAGV5:00000019 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:10:59.7931985+07:00 0HM8MRVVPAGV5:00000019 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:10:59.7942196+07:00 0HM8MRVVPAGV5:00000019 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:10:59.8040542+07:00 0HM8MRVVPAGV5:00000019 [INF] Executed DbCommand ("9"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:10:59.8195391+07:00 0HM8MRVVPAGV5:00000019 [INF] Executed DbCommand ("13"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:10:59.8274548+07:00 0HM8MRVVPAGV5:00000019 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:10:59.8275303+07:00 0HM8MRVVPAGV5:00000019 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 34.2941ms (afa2e885)
+2021-05-14T21:10:59.8275898+07:00 0HM8MRVVPAGV5:00000019 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:10:59.8277320+07:00 0HM8MRVVPAGV5:00000019 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 - 204 - - 35.2575ms (791a596a)
+2021-05-14T21:10:59.8553188+07:00 0HM8MRVVPAGV5:0000001A [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:10:59.8554074+07:00 0HM8MRVVPAGV5:0000001A [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:10:59.8554783+07:00 0HM8MRVVPAGV5:0000001A [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.1751ms (791a596a)
+2021-05-14T21:10:59.8779383+07:00 0HM8MRVVPAGV5:0000001B [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:10:59.8780227+07:00 0HM8MRVVPAGV5:0000001B [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:10:59.8782702+07:00 0HM8MRVVPAGV5:0000001B [INF] Successfully validated the token. (60169667)
+2021-05-14T21:10:59.8783481+07:00 0HM8MRVVPAGV5:0000001B [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:10:59.8783836+07:00 0HM8MRVVPAGV5:0000001B [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:10:59.8784781+07:00 0HM8MRVVPAGV5:0000001B [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:10:59.8789735+07:00 0HM8MRVVPAGV5:0000001B [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:10:59.8873824+07:00 0HM8MRVVPAGV5:0000001B [INF] Executed DbCommand ("8"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:10:59.8879223+07:00 0HM8MRVVPAGV5:0000001B [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:10:59.8881020+07:00 0HM8MRVVPAGV5:0000001B [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 9.5927ms (afa2e885)
+2021-05-14T21:10:59.8881314+07:00 0HM8MRVVPAGV5:0000001B [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:10:59.8882088+07:00 0HM8MRVVPAGV5:0000001B [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 10.2802ms (791a596a)
+2021-05-14T21:11:36.5483506+07:00 0HM8MRVVPAGV5:0000001C [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:11:36.5486100+07:00 0HM8MRVVPAGV5:0000001C [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:11:36.5488932+07:00 0HM8MRVVPAGV5:0000001C [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.5691ms (791a596a)
+2021-05-14T21:11:36.5515795+07:00 0HM8MRVVPAGV5:0000001D [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 (ca22a1cb)
+2021-05-14T21:11:36.5517997+07:00 0HM8MRVVPAGV5:0000001D [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:11:36.5529486+07:00 0HM8MRVVPAGV5:0000001D [INF] Successfully validated the token. (60169667)
+2021-05-14T21:11:36.5533498+07:00 0HM8MRVVPAGV5:0000001D [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:11:36.5534247+07:00 0HM8MRVVPAGV5:0000001D [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:11:36.5537166+07:00 0HM8MRVVPAGV5:0000001D [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:11:36.5558940+07:00 0HM8MRVVPAGV5:0000001D [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:11:36.5673615+07:00 0HM8MRVVPAGV5:0000001D [INF] Executed DbCommand ("10"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:11:36.5890964+07:00 0HM8MRVVPAGV5:0000001D [INF] Executed DbCommand ("13"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:11:36.5904639+07:00 0HM8MRVVPAGV5:0000001D [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:11:36.5905647+07:00 0HM8MRVVPAGV5:0000001D [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 36.7844ms (afa2e885)
+2021-05-14T21:11:36.5906131+07:00 0HM8MRVVPAGV5:0000001D [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:11:36.5908206+07:00 0HM8MRVVPAGV5:0000001D [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 121 - 204 - - 39.2464ms (791a596a)
+2021-05-14T21:11:36.6115175+07:00 0HM8MRVVPAGV5:0000001E [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:11:36.6117123+07:00 0HM8MRVVPAGV5:0000001E [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:11:36.6119091+07:00 0HM8MRVVPAGV5:0000001E [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.4117ms (791a596a)
+2021-05-14T21:11:36.6155592+07:00 0HM8MRVVPAGV5:0000001F [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:11:36.6156309+07:00 0HM8MRVVPAGV5:0000001F [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:11:36.6158485+07:00 0HM8MRVVPAGV5:0000001F [INF] Successfully validated the token. (60169667)
+2021-05-14T21:11:36.6159348+07:00 0HM8MRVVPAGV5:0000001F [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:11:36.6159621+07:00 0HM8MRVVPAGV5:0000001F [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:11:36.6160638+07:00 0HM8MRVVPAGV5:0000001F [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:11:36.6166591+07:00 0HM8MRVVPAGV5:0000001F [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:11:36.6181579+07:00 0HM8MRVVPAGV5:0000001F [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:11:36.6187593+07:00 0HM8MRVVPAGV5:0000001F [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:11:36.6191861+07:00 0HM8MRVVPAGV5:0000001F [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 3.0814ms (afa2e885)
+2021-05-14T21:11:36.6192191+07:00 0HM8MRVVPAGV5:0000001F [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:11:36.6201496+07:00 0HM8MRVVPAGV5:0000001F [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 3.7446ms (791a596a)
+2021-05-14T21:15:22.7829307+07:00 0HM8MRVVPAGV6:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:15:22.7830851+07:00 0HM8MRVVPAGV6:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:15:22.7832184+07:00 0HM8MRVVPAGV6:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.2859ms (791a596a)
+2021-05-14T21:15:22.7867289+07:00 0HM8MRVVPAGV6:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:15:22.7868191+07:00 0HM8MRVVPAGV6:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:15:22.7872976+07:00 0HM8MRVVPAGV6:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:15:22.7875215+07:00 0HM8MRVVPAGV6:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:15:22.7875730+07:00 0HM8MRVVPAGV6:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:15:22.7877178+07:00 0HM8MRVVPAGV6:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:15:22.7883896+07:00 0HM8MRVVPAGV6:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:15:22.7954779+07:00 0HM8MRVVPAGV6:00000003 [INF] Executed DbCommand ("7"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:15:22.7960417+07:00 0HM8MRVVPAGV6:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:15:22.7962107+07:00 0HM8MRVVPAGV6:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 8.4624ms (afa2e885)
+2021-05-14T21:15:22.7962346+07:00 0HM8MRVVPAGV6:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:15:22.7962967+07:00 0HM8MRVVPAGV6:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 9.5648ms (791a596a)
+2021-05-14T21:15:54.1747000+07:00 0HM8MRVVPAGV6:00000004 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:15:54.1748070+07:00 0HM8MRVVPAGV6:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:15:54.1748922+07:00 0HM8MRVVPAGV6:00000004 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.2035ms (791a596a)
+2021-05-14T21:15:54.1775385+07:00 0HM8MRVVPAGV6:00000005 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 135 (ca22a1cb)
+2021-05-14T21:15:54.1776300+07:00 0HM8MRVVPAGV6:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:15:54.1779338+07:00 0HM8MRVVPAGV6:00000005 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:15:54.1780540+07:00 0HM8MRVVPAGV6:00000005 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:15:54.1780996+07:00 0HM8MRVVPAGV6:00000005 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:15:54.1782066+07:00 0HM8MRVVPAGV6:00000005 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:15:54.1791043+07:00 0HM8MRVVPAGV6:00000005 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:15:54.1900740+07:00 0HM8MRVVPAGV6:00000005 [INF] Executed DbCommand ("10"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:15:54.2065919+07:00 0HM8MRVVPAGV6:00000005 [INF] Executed DbCommand ("15"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:15:54.2483371+07:00 0HM8MRVVPAGV6:00000005 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:15:54.2484677+07:00 0HM8MRVVPAGV6:00000005 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 70.1875ms (afa2e885)
+2021-05-14T21:15:54.2485165+07:00 0HM8MRVVPAGV6:00000005 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:15:54.2487456+07:00 0HM8MRVVPAGV6:00000005 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 135 - 204 - - 71.1954ms (791a596a)
+2021-05-14T21:15:54.2714576+07:00 0HM8MRVVPAGV6:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:15:54.2716184+07:00 0HM8MRVVPAGV6:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:15:54.2717266+07:00 0HM8MRVVPAGV6:00000006 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.2824ms (791a596a)
+2021-05-14T21:15:54.2753535+07:00 0HM8MRVVPAGV6:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:15:54.2755545+07:00 0HM8MRVVPAGV6:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:15:54.2758788+07:00 0HM8MRVVPAGV6:00000007 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:15:54.2760240+07:00 0HM8MRVVPAGV6:00000007 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:15:54.2760881+07:00 0HM8MRVVPAGV6:00000007 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:15:54.2762316+07:00 0HM8MRVVPAGV6:00000007 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:15:54.2769934+07:00 0HM8MRVVPAGV6:00000007 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:15:54.2803811+07:00 0HM8MRVVPAGV6:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:15:54.2812795+07:00 0HM8MRVVPAGV6:00000007 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:15:54.2817787+07:00 0HM8MRVVPAGV6:00000007 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 5.4648ms (afa2e885)
+2021-05-14T21:15:54.2818378+07:00 0HM8MRVVPAGV6:00000007 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:15:54.2819981+07:00 0HM8MRVVPAGV6:00000007 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 6.6333ms (791a596a)
+2021-05-14T21:16:41.8458374+07:00 0HM8MRVVPAGV6:00000008 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:16:41.8460793+07:00 0HM8MRVVPAGV6:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:16:41.8461859+07:00 0HM8MRVVPAGV6:00000008 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.3789ms (791a596a)
+2021-05-14T21:16:41.8498969+07:00 0HM8MRVVPAGV6:00000009 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 135 (ca22a1cb)
+2021-05-14T21:16:41.8499892+07:00 0HM8MRVVPAGV6:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:16:41.8510859+07:00 0HM8MRVVPAGV6:00000009 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:16:41.8512320+07:00 0HM8MRVVPAGV6:00000009 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:16:41.8512797+07:00 0HM8MRVVPAGV6:00000009 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:16:41.8513934+07:00 0HM8MRVVPAGV6:00000009 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:16:41.8522103+07:00 0HM8MRVVPAGV6:00000009 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:16:41.8631671+07:00 0HM8MRVVPAGV6:00000009 [INF] Executed DbCommand ("10"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:16:41.8800558+07:00 0HM8MRVVPAGV6:00000009 [INF] Executed DbCommand ("9"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:16:41.8826000+07:00 0HM8MRVVPAGV6:00000009 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:16:41.8826835+07:00 0HM8MRVVPAGV6:00000009 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 31.2345ms (afa2e885)
+2021-05-14T21:16:41.8827101+07:00 0HM8MRVVPAGV6:00000009 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:16:41.8828230+07:00 0HM8MRVVPAGV6:00000009 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 135 - 204 - - 32.9253ms (791a596a)
+2021-05-14T21:16:41.9094457+07:00 0HM8MRVVPAGV6:0000000A [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:16:41.9096205+07:00 0HM8MRVVPAGV6:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:16:41.9096918+07:00 0HM8MRVVPAGV6:0000000A [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.2497ms (791a596a)
+2021-05-14T21:16:41.9201163+07:00 0HM8MRVVPAGV6:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:16:41.9201948+07:00 0HM8MRVVPAGV6:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:16:41.9204351+07:00 0HM8MRVVPAGV6:0000000B [INF] Successfully validated the token. (60169667)
+2021-05-14T21:16:41.9205528+07:00 0HM8MRVVPAGV6:0000000B [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:16:41.9205850+07:00 0HM8MRVVPAGV6:0000000B [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:16:41.9206911+07:00 0HM8MRVVPAGV6:0000000B [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:16:41.9212125+07:00 0HM8MRVVPAGV6:0000000B [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:16:41.9304905+07:00 0HM8MRVVPAGV6:0000000B [INF] Executed DbCommand ("9"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:16:41.9310857+07:00 0HM8MRVVPAGV6:0000000B [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:16:41.9312693+07:00 0HM8MRVVPAGV6:0000000B [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 10.5466ms (afa2e885)
+2021-05-14T21:16:41.9312963+07:00 0HM8MRVVPAGV6:0000000B [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:16:41.9314250+07:00 0HM8MRVVPAGV6:0000000B [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 11.2736ms (791a596a)
+2021-05-14T21:22:19.8703484+07:00 0HM8MRVVPAGV7:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:22:19.8706295+07:00 0HM8MRVVPAGV7:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:22:19.8709236+07:00 0HM8MRVVPAGV7:00000002 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.6178ms (791a596a)
+2021-05-14T21:22:19.8747930+07:00 0HM8MRVVPAGV7:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:22:19.8748952+07:00 0HM8MRVVPAGV7:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:22:19.8752940+07:00 0HM8MRVVPAGV7:00000003 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:22:19.8754215+07:00 0HM8MRVVPAGV7:00000003 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:22:19.8754669+07:00 0HM8MRVVPAGV7:00000003 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:22:19.8756271+07:00 0HM8MRVVPAGV7:00000003 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:22:19.8764559+07:00 0HM8MRVVPAGV7:00000003 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:22:19.8882968+07:00 0HM8MRVVPAGV7:00000003 [INF] Executed DbCommand ("11"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:22:19.8889900+07:00 0HM8MRVVPAGV7:00000003 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:22:19.8892537+07:00 0HM8MRVVPAGV7:00000003 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 13.5823ms (afa2e885)
+2021-05-14T21:22:19.8892916+07:00 0HM8MRVVPAGV7:00000003 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:22:19.8893886+07:00 0HM8MRVVPAGV7:00000003 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 14.5887ms (791a596a)
+2021-05-14T21:22:39.7100009+07:00 0HM8MRVVPAGV7:00000004 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:22:39.7101076+07:00 0HM8MRVVPAGV7:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:22:39.7101956+07:00 0HM8MRVVPAGV7:00000004 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.2091ms (791a596a)
+2021-05-14T21:22:39.7129510+07:00 0HM8MRVVPAGV7:00000005 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users/raymond application/json;charset=UTF-8 121 (ca22a1cb)
+2021-05-14T21:22:39.7130688+07:00 0HM8MRVVPAGV7:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:22:39.7133327+07:00 0HM8MRVVPAGV7:00000005 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:22:39.7134243+07:00 0HM8MRVVPAGV7:00000005 [INF] Executing endpoint '"405 HTTP Method Not Supported"' (500cc934)
+2021-05-14T21:22:39.7136444+07:00 0HM8MRVVPAGV7:00000005 [INF] Executed endpoint '"405 HTTP Method Not Supported"' (99874f2b)
+2021-05-14T21:22:39.7137248+07:00 0HM8MRVVPAGV7:00000005 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users/raymond application/json;charset=UTF-8 121 - 405 0 - 0.7869ms (791a596a)
+2021-05-14T21:22:57.6050597+07:00 0HM8MRVVPAGV7:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:22:57.6052634+07:00 0HM8MRVVPAGV7:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:22:57.6053318+07:00 0HM8MRVVPAGV7:00000006 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.2854ms (791a596a)
+2021-05-14T21:22:57.6114269+07:00 0HM8MRVVPAGV7:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:22:57.6114957+07:00 0HM8MRVVPAGV7:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:22:57.6117383+07:00 0HM8MRVVPAGV7:00000007 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:22:57.6118659+07:00 0HM8MRVVPAGV7:00000007 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:22:57.6118926+07:00 0HM8MRVVPAGV7:00000007 [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:22:57.6120788+07:00 0HM8MRVVPAGV7:00000007 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:22:57.6128430+07:00 0HM8MRVVPAGV7:00000007 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:22:57.6582542+07:00 0HM8MRVVPAGV7:00000007 [INF] Executed DbCommand ("45"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:22:57.6588889+07:00 0HM8MRVVPAGV7:00000007 [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:22:57.6590728+07:00 0HM8MRVVPAGV7:00000007 [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 46.9206ms (afa2e885)
+2021-05-14T21:22:57.6590997+07:00 0HM8MRVVPAGV7:00000007 [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:22:57.6591763+07:00 0HM8MRVVPAGV7:00000007 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 47.7433ms (791a596a)
+2021-05-14T21:23:02.5235629+07:00 0HM8MRVVPAGV7:00000008 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users - - (ca22a1cb)
+2021-05-14T21:23:02.5237731+07:00 0HM8MRVVPAGV7:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:23:02.5238576+07:00 0HM8MRVVPAGV7:00000008 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users - - - 204 - - 0.2998ms (791a596a)
+2021-05-14T21:23:02.5264707+07:00 0HM8MRVVPAGV7:00000009 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 135 (ca22a1cb)
+2021-05-14T21:23:02.5266694+07:00 0HM8MRVVPAGV7:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:23:02.5269058+07:00 0HM8MRVVPAGV7:00000009 [INF] Successfully validated the token. (60169667)
+2021-05-14T21:23:02.5269859+07:00 0HM8MRVVPAGV7:00000009 [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:23:02.5270153+07:00 0HM8MRVVPAGV7:00000009 [INF] Executing endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (500cc934)
+2021-05-14T21:23:02.5271511+07:00 0HM8MRVVPAGV7:00000009 [INF] Route matched with "{action = \"UpdateUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] UpdateUser(api.DTO.MemberUpdateDto)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:23:02.5278427+07:00 0HM8MRVVPAGV7:00000009 [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:23:02.5289429+07:00 0HM8MRVVPAGV7:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:23:02.5429742+07:00 0HM8MRVVPAGV7:00000009 [INF] Executed DbCommand ("13"ms) [Parameters=["@p24='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p25='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 256), @p17='?' (Size = 256), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [City] = @p1, [ConcurrencyStamp] = @p2, [Country] = @p3, [Created] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [Gender] = @p8, [Interests] = @p9, [Introduction] = @p10, [KnownAs] = @p11, [LastActive] = @p12, [LockoutEnabled] = @p13, [LockoutEnd] = @p14, [LookingFor] = @p15, [NormalizedEmail] = @p16, [NormalizedUserName] = @p17, [PasswordHash] = @p18, [PhoneNumber] = @p19, [PhoneNumberConfirmed] = @p20, [SecurityStamp] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24 AND [ConcurrencyStamp] = @p25;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-05-14T21:23:02.5792260+07:00 0HM8MRVVPAGV7:00000009 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204 (e28ccfae)
+2021-05-14T21:23:02.5793090+07:00 0HM8MRVVPAGV7:00000009 [INF] Executed action "api.Controllers.UsersController.UpdateUser (api)" in 52.1095ms (afa2e885)
+2021-05-14T21:23:02.5793601+07:00 0HM8MRVVPAGV7:00000009 [INF] Executed endpoint '"api.Controllers.UsersController.UpdateUser (api)"' (99874f2b)
+2021-05-14T21:23:02.5795172+07:00 0HM8MRVVPAGV7:00000009 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/users application/json;charset=UTF-8 135 - 204 - - 53.0256ms (791a596a)
+2021-05-14T21:23:02.6193377+07:00 0HM8MRVVPAGV7:0000000A [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:23:02.6195726+07:00 0HM8MRVVPAGV7:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:23:02.6196598+07:00 0HM8MRVVPAGV7:0000000A [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/users/raymond - - - 204 - - 0.3320ms (791a596a)
+2021-05-14T21:23:02.6248780+07:00 0HM8MRVVPAGV7:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/raymond - - (ca22a1cb)
+2021-05-14T21:23:02.6250498+07:00 0HM8MRVVPAGV7:0000000B [INF] CORS policy execution successful. (5409d6ef)
+2021-05-14T21:23:02.6253214+07:00 0HM8MRVVPAGV7:0000000B [INF] Successfully validated the token. (60169667)
+2021-05-14T21:23:02.6254251+07:00 0HM8MRVVPAGV7:0000000B [INF] Authorization was successful. (0d575a54)
+2021-05-14T21:23:02.6254928+07:00 0HM8MRVVPAGV7:0000000B [INF] Executing endpoint '"api.Controllers.UsersController.GetUser (api)"' (500cc934)
+2021-05-14T21:23:02.6256122+07:00 0HM8MRVVPAGV7:0000000B [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[api.DTO.MemberDto]] GetUser(System.String)" on controller "api.Controllers.UsersController" ("api"). (122b2fdf)
+2021-05-14T21:23:02.6263881+07:00 0HM8MRVVPAGV7:0000000B [INF] Entity Framework Core "5.0.3" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2021-05-14T21:23:02.6292582+07:00 0HM8MRVVPAGV7:0000000B [INF] Executed DbCommand ("2"ms) [Parameters=["@__username_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[City], [t].[ConcurrencyStamp], [t].[Country], [t].[Created], [t].[DateOfBirth], [t].[Email], [t].[EmailConfirmed], [t].[Gender], [t].[Interests], [t].[Introduction], [t].[KnownAs], [t].[LastActive], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[LookingFor], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [p].[Id], [p].[AppUsersId], [p].[IsMain], [p].[PublicId], [p].[Url]
+FROM (
+    SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[City], [a].[ConcurrencyStamp], [a].[Country], [a].[Created], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[Gender], [a].[Interests], [a].[Introduction], [a].[KnownAs], [a].[LastActive], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[LookingFor], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[Id] = [p].[AppUsersId]
+ORDER BY [t].[Id], [p].[Id]" (0723d8ff)
+2021-05-14T21:23:02.6297433+07:00 0HM8MRVVPAGV7:0000000B [INF] Executing "OkObjectResult", writing value of type '"api.DTO.MemberDto"'. (605b4265)
+2021-05-14T21:23:02.6299316+07:00 0HM8MRVVPAGV7:0000000B [INF] Executed action "api.Controllers.UsersController.GetUser (api)" in 4.2727ms (afa2e885)
+2021-05-14T21:23:02.6299707+07:00 0HM8MRVVPAGV7:0000000B [INF] Executed endpoint '"api.Controllers.UsersController.GetUser (api)"' (99874f2b)
+2021-05-14T21:23:02.6300530+07:00 0HM8MRVVPAGV7:0000000B [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/users/raymond - - - 200 - application/json;+charset=utf-8 5.1770ms (791a596a)
