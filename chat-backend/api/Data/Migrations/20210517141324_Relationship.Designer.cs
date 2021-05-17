@@ -10,7 +10,7 @@ using api.Data;
 namespace api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210517131656_Relationship")]
+    [Migration("20210517141324_Relationship")]
     partial class Relationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -330,8 +330,8 @@ namespace api.Data.Migrations
                     b.Property<int>("SenderId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
