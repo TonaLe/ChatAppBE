@@ -18,7 +18,7 @@ namespace api.Controllers
             this.relationshipRepository = relationshipRepository;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<RelationshipDto>>> GetAllFriendRequests(int senderId)
         {
             var relationships = relationshipRepository.getAllRequest(senderId, 0);
