@@ -7,8 +7,15 @@ namespace api.DTO
 {
     public class RelationshipDto
     {
+        public RelationshipDto(int receiverId, int senderId, int status)
+        {
+            ReceiverId = receiverId;
+            SenderId = senderId;
+            Status = status;
+        }
+
         public int SenderId { get; set; }
         public int ReceiverId { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

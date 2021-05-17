@@ -1,4 +1,5 @@
 ﻿using api.DTO;
+using api.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace api.Interfaces
 {
-    interface IRelationshipRepository
+    public interface IRelationshipRepository
     {
-        void sendRequest(int senderId, int receiverId, string status);
+        void sendRequest(Relationship relationship);
 
-        void rejectRequest(int id);
-        void acceptRequest(int id);
-        Task<RelationshipDto> getSingleRequest(int receiverId);
+        void rejectRequest(Relationship relationship);
+        void acceptRequest(Relationship relationship);
+        Task<RelationshipDto> getSingleRequest(int receiverId, int senderId, int status);
 
-        Task<IEnumerable<RelationshipDto>> getAllRequest(int receiverId);
+        Task<IEnumerable<RelationshipDto>> getAllRequest(int receiverId, int status);
     }
 }
